@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519162122) do
+ActiveRecord::Schema.define(version: 20160519181122) do
 
   create_table "stops", force: :cascade do |t|
     t.integer  "truck_id"
