@@ -8,9 +8,12 @@ gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
+gem 'pry'
+gem 'rspec'
+gem 'byebug'
+
 
 group :development, :test do
-  gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'
 end
