@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519145811) do
+ActiveRecord::Schema.define(version: 20160519162122) do
+
+  create_table "stops", force: :cascade do |t|
+    t.integer  "truck_id"
+    t.string   "name"
+    t.datetime "from"
+    t.datetime "to"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
 
   create_table "trucks", force: :cascade do |t|
     t.string   "name"
