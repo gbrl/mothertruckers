@@ -1,10 +1,7 @@
 <h1><%= @truck.name %></h1>
 <img src="<%= @truck.image_small %>" />
 <h2><%= @truck.description %></h2>
-<% if current_user %>
 <label>
   Add personal note:
   <textarea placeholder="Everyone's a critic!"></textarea>
 </label>
-<% end %>
-<p><a href="/trucks">Back to All Trucks</a></p>
