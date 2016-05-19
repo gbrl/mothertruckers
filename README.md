@@ -10,3 +10,10 @@ User.create(email: "taco@lover.com", password: "hungry")
 User.create(email: "burger@lover.com", password: "hungry")
 User.create(email: "poutine@lover.com", password: "hungry")
 User.create(email: "food@lover.com", password: "hungry")
+
+
+## SCSS
+
+Inside your mothertruckers folder, run this command:
+
+sass --watch scss:public/stylesheets --poll

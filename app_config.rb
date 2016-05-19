@@ -1,6 +1,5 @@
 require 'active_record'
 require 'active_support/all'
-require './lib/trucks_importer'
 require './app/models/truck'
 # Add new app/ and lib/ files here when they are created.
 
