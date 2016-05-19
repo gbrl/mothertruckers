@@ -1,10 +1,5 @@
 # mothertruckers
 
-## Getting Started
+## Install gems, Re-build and re-populate the database.
 
-```bash
-$ bundle install
-$ bundle exec rake db:create
-$ bundle exec rake db:migrate
-$ bundle exec rake db:populate
-```
+bundle install && rm db/db.sqlite3 && bundle exec rake db:create && bundle exec rake db:migrate && ruby import.rb

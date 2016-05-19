@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519145811) do
+ActiveRecord::Schema.define(version: 20160519173132) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "truck_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stops", force: :cascade do |t|
+    t.integer  "truck_id"
+    t.string   "name"
+    t.datetime "from"
+    t.datetime "to"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
 
   create_table "trucks", force: :cascade do |t|
     t.string   "name"
@@ -19,16 +36,16 @@ ActiveRecord::Schema.define(version: 20160519145811) do
     t.string   "email"
     t.string   "website"
     t.string   "cuisine"
-    t.datetime "creation_date"
     t.string   "image"
     t.string   "image_small"
     t.string   "image_large"
-    t.boolean  "no_longer_in_business"
-    t.datetime "open_time"
-    t.datetime "close_time"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "intersection"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
