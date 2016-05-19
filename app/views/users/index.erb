@@ -4,20 +4,28 @@
   </div>
 <% end %>
 
-  <h3>Log In<h3>
-  <form action="/login" method="POST">
-    <label>email</label>
-    <input name="email" type="text"/>
-    <label>password</label>
-    <input name="password" type="text"/>
-    <input type="submit" value="Log In"/>
-  </form>
+<table>
+  <tr>
+    <td>
+      <h3>Log In</h3>
+      <form action="/users/login" method="POST">
+        <label>email</label>
+        <input name="email" type="text"/>
+        <label>password</label>
+        <input name="password" type="text"/>
+        <input type="submit" value="Log In"/>
+      </form>
+    </td>
+    <td>
+      <h3>Register</h3>
+      <form action="/users/register" method="POST">
+        <label>email</label>
+        <input name="email" type="text"/>
+        <label>password</label>
+        <input name="password" type="text"/>
+        <input type="submit" value="Register"/>
+      </form>
+    </td> 
+  </tr>
+</table>
 
-  <h3>Register<h3>
-  <form action="/register" method="POST">
-    <label>email</label>
-    <input name="email" type="text"/>
-    <label>password</label>
-    <input name="password" type="text"/>
-    <input type="submit" value="Register"/>
-  </form>

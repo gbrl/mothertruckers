@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-<!--   <link rel="stylesheet" href="/stylesheets/normalize.css"> -->
-  <!--
-    application.css is where you put your styles
-  -->
- <!--  <link rel="stylesheet" href="/stylesheets/application.css"> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+  <script src="/javascript/application.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
 
+  <link rel="stylesheet" href="/stylesheets/application.css">
 
-  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
-
-  <title></title>
+  <title>MOTHER TRUCKERS</title>
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/trucks">All Trucks</a></li>
+      <% if current_user %>
+      <li><a href="/users/logout">Logout</a></li>
+      <% else %>
+      <li><a href="/users">Login/Register</a></li>
+      <% end %>
+      <li><form id="search"><input type="text" name="query"></form></li>
+    </ul>
+  </nav>
+</header>
+<section id="main-content">
   <%= yield %>
+</section>
 </body>
 </html>
 
