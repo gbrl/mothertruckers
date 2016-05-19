@@ -1,0 +1,7 @@
+<% @trucks.each do |t| %>
+  <div>
+    <strong><%= t.name %></strong>
+    <p><%= t.description %></p>
+    <img src="<%= t.image_small %>" />
+  </div>
+<% end %>
