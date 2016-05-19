@@ -8,7 +8,6 @@ gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
-gem 'friendly_id'
 
 group :development, :test do
   gem 'pry'

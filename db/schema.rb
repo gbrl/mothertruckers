@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160519181122) do
     t.string   "image_large"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "users", force: :cascade do |t|
