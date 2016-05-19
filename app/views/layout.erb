@@ -21,10 +21,13 @@
       <% else %>
       <li><a href="/users">Login/Register</a></li>
       <% end %>
+      <li><form id="search"><input type="text" name="query"></form></li>
     </ul>
   </nav>
 </header>
+<section id="main-content">
   <%= yield %>
+</section>
 </body>
 </html>
 
