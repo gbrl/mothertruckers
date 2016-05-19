@@ -8,6 +8,7 @@ require 'active_support/all'
 require_relative 'app_config'
 require_relative 'app/models/truck'
 require_relative 'app/models/stop'
+require_relative 'app/models/user'
 
 def process_file
 
@@ -49,6 +50,12 @@ def parse(hash)
       end
     end
   end
+
+User.create(email: "taco@lover.com", password: "hungry")
+User.create(email: "burger@lover.com", password: "hungry")
+User.create(email: "poutine@lover.com", password: "hungry")
+User.create(email: "food@lover.com", password: "hungry")
+
 end
 
 process_file
