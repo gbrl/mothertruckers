@@ -15,18 +15,15 @@ def process_file
   uri = URI("http://foodtruckreporter.com/api/food-trucks/trucks?access_token=566f92c903d8405f82490fcbdfad62b3&format=json&limit=1000&city=4")
   resp = Net::HTTP.get_response(uri)
   hash = JSON(resp.body)
-
   parse(hash)
+
 end
 
 def parse(hash)
 
   trucks = hash['objects']
 
-  trucks.each do |e|
-     
-
-    
+  trucks.each do |e| 
     new_truck = Truck.new(
       name: e["name"],
       description: e["description_stripped"],
@@ -37,38 +34,20 @@ def parse(hash)
       image_small: e["main_image_thumbnail"],
       image_large: e["main_image_large"])
 
-
-    if e["stop_details"] && e["stop_details"].length > 0
-      e["stop_details"].each do |stop|
-        Stop.create(truck_id: new_truck.id, )
+    if new_truck.save!
+      if e["stop_details"] && e["stop_details"].length > 0
+        e["stop_details"].each do |stop|
+          Stop.create(
+          truck_id: new_truck.id,
+          name: stop["name"],
+          from: stop["from"],
+          latitude: stop["latitude"],
+          longitude: stop["longitude"],
+          to: stop["to"])
+        end
       end
     end
-
-    
-
   end
-
 end
 
 process_file
-
-
-
-####################################################################
-
-
-# trucks = doc.search('.truck').map
-
-# puts "Found #{all_truck_boxes.count} trucks."
-# img_sources = []
-# titles = []
-
-# all_truck_boxes.each do |truck|
-
-#    titles << truck.search(".title > a").inner_text
-#    img_sources << truck.search("img").attr('src').inner_text.gsub("h=210","h=420").gsub("w=290","w=580")
-
-# end
-
-# pp img_sources
-# pp titles
