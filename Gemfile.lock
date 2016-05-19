@@ -18,7 +18,9 @@ GEM
     backports (3.6.7)
     bond (0.5.1)
     builder (3.2.2)
+    byebug (8.2.4)
     coderay (1.1.0)
+    diff-lcs (1.2.5)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
@@ -43,6 +45,19 @@ GEM
       rack (>= 1.0)
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     shotgun (0.9.1)
       rack (>= 1.0)
     sinatra (1.4.6)
@@ -76,9 +91,11 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  byebug
   pry
   puma
   rake
+  rspec
   shotgun
   sinatra
   sinatra-activerecord
