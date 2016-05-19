@@ -34,7 +34,11 @@ get '/users' do
   erb :'users/index'
 end
 
-get '/users/:id' do
+
+
+get '/users/logout' do
+  session.clear
+  redirect '/'
 end
 
 post '/users/login' do
@@ -59,9 +63,7 @@ post 'users/register' do
   end
 end
 
-get'/users/logout' do
-  session.clear
-  redirect '/'
+get '/users/:id' do
 end
 
 
