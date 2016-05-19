@@ -1,8 +1,9 @@
-<h1><%= @truck.name %></h1>
-<h1><a href="/trucks/<%= @truck.slug %>"><%= @truck.name %></a></h1>
-<img src="<%= @truck.image_small %>" />
-<h2><%= @truck.description %></h2>
-<label>
-  Add personal note:
-  <textarea placeholder="Everyone's a critic!"></textarea>
-</label>
+<h1><a href="<%= @truck.website %>"><%= @truck.name %></a></h1>
+<img src="<%= @truck.image_large %>" />
+<p><%= @truck.description %><p>
+
+<form id="myNote" method="post">
+  <label>Add personal note:</label>
+  <input type="text" placeholder="Everyone's a critic!">
+  <input type="Submit" class="button"></button>
+</form>
