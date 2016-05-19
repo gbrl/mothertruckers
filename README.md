@@ -16,4 +16,4 @@ User.create(email: "food@lover.com", password: "hungry")
 
 Inside your mothertruckers folder, run this command:
 
-sass --watch scss:css --poll
+sass --watch scss:public/stylesheets --poll
