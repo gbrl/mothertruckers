@@ -7,6 +7,7 @@ require 'active_record'
 require 'active_support/all'
 require_relative 'app_config'
 require_relative 'app/models/truck'
+require_relative 'app/models/stop'
 
 def process_file
 
@@ -41,8 +42,8 @@ def parse(hash)
           truck_id: new_truck.id,
           name: stop["name"],
           from: stop["from"],
-          latitude: stop["latitude"],
-          longitude: stop["longitude"],
+          latitude: stop["location"]["latitude"].to_f,
+          longitude: stop["location"]["longitude"].to_f,
           to: stop["to"])
         end
       end
