@@ -10,11 +10,11 @@ describe Truck do
   end
 
   it "a Truck has a positive rating" do
-    @truck.ratings.should be_greater_than_or_equal_to(0)
+    @truck.ratings.length.should be_greater_than_or_equal_to(0)
   end
 
   it "a Truck has notes" do
-    @truck.notes.to be_truthy
+    @truck.notes.count.to be_truthy
   end
 
   after :each do
