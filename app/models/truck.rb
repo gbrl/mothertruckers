@@ -9,7 +9,7 @@ class Truck < ActiveRecord::Base
   private
 
   def make_slug
-    self.slug = self.name.downcase.gsub(" ","-").gsub(".","").gsub("&","and").gsub("/","").gsub("?","")
+    self.slug = self.name.downcase.gsub(" ","-").gsub(".","").gsub("&","and").gsub("/","").gsub("?","").gsub("'","")
   end
 
 end
