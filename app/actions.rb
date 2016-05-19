@@ -35,7 +35,6 @@ get '/users' do
 end
 
 
-
 get '/users/logout' do
   session.clear
   redirect '/'
