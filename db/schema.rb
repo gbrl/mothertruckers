@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519184206) do
+ActiveRecord::Schema.define(version: 20160519202527) do
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer "truck_id"
+    t.integer "user_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.integer  "truck_id"
