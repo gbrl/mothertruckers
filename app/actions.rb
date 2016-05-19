@@ -18,7 +18,8 @@ get '/trucks' do
 end
 
 
-get '/trucks/:name' do
+get '/trucks/:slug' do
+  @truck = Truck.find_by_slug(params[:slug])
   erb :'/trucks/show'
 end
 
