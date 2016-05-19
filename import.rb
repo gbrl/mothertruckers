@@ -25,15 +25,26 @@ def parse(hash)
 
   trucks.each do |e|
      
-    Truck.create(
-    name: e["name"],
-    description: e["description_stripped"],
-    email: e["email"],
-    website: e["site_url"],
-    cuisine: e["cuisine"],
-    image: e["main_image"],
-    image_small: e["main_image_thumbnail"],
-    image_large: e["main_image_large"])
+
+    
+    new_truck = Truck.new(
+      name: e["name"],
+      description: e["description_stripped"],
+      email: e["email"],
+      website: e["site_url"],
+      cuisine: e["cuisine"],
+      image: e["main_image"],
+      image_small: e["main_image_thumbnail"],
+      image_large: e["main_image_large"])
+
+
+    if e["stop_details"] && e["stop_details"].length > 0
+      e["stop_details"].each do |stop|
+        Stop.create(truck_id: new_truck.id, )
+      end
+    end
+
+    
 
   end
 
