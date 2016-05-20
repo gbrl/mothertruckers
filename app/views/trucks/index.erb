@@ -8,7 +8,7 @@
     <h1><a href="/trucks/<%= t.slug %>"><%= t.name %></a></h1>
     <p><%= t.description %></p>
     <p>Cuisine: <%= t.cuisine %></p>
-    <p><a href="/trucks/<%= t.website %>"><%= t.website %></p>
+    <p><a href="<%= t.website %>"><%= t.website %></p>
     <img src="<%= t.image_small %>" />
   </div>
 <% end %>
