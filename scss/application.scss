@@ -48,6 +48,17 @@ body {
 
   #main-content {
     display: block;
+
+    #all-trucks {
+      
+      .truck-box {
+      float: left;
+      width: 290px !important;
+
+      h3 {margin-top: 30px}
+      }
+    }
+    
   }
 
   #map {

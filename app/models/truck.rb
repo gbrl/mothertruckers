@@ -12,4 +12,8 @@ class Truck < ActiveRecord::Base
     self.slug = self.name.downcase.gsub(" ","-").gsub(".","").gsub("&","and").gsub("/","").gsub("?","").gsub("'","")
   end
 
+  def self.open
+    Truck.all.map { |t| t.stops.length > 0 }
+  end
+
 end
