@@ -3,7 +3,7 @@
 <form method="post" action="/ratings">
     <div id="stars-input">
       <strong>Rating</strong>
-      <input type="range" value="0" step="1" id="stars" name="rating">
+      <input type="range" value="<%= @truck.rating.to_i %>" step="1" id="stars" name="rating">
       <input type="hidden" name="truck_id" value="<%= @truck.id %>">
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
       <div class="rateit svg" data-rateit-backingfld="#stars" data-rateit-resetable="false"  data-rateit-ispreset="true"
