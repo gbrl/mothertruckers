@@ -1,6 +1,6 @@
 <h1><a href="<%= @truck.website %>"><%= @truck.name %></a></h1>
 <img src="<%= @truck.image_large %>" />
-<form method="post" action="/ratings">
+<form method="post" action="/ratings" id="ratings-form">
     <div id="stars-input">
       <strong>Rating</strong>
       <input type="range" value="<%= @truck.rating.to_i %>" step="1" id="stars" name="rating">
@@ -10,6 +10,7 @@
     data-rateit-min="0" data-rateit-max="5" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
     </div>
     <br />
+    <input type="submit" value="Submit" class="hidden">
 </form>
 
 <p><%= @truck.description %></p>

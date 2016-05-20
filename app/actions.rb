@@ -10,7 +10,7 @@ end
 
 get '/profile' do
   @notes = current_user.notes if current_user
-  @favourites = current_user.favourite if current_user
+  @favourites = current_user.favourites if current_user
   erb :'users/show'
 end
 
@@ -84,17 +84,14 @@ end
 # NOTES
 
 post '/notes' do
-  @note = Note.create(content: params[:content], truck_id: params[:truck_id], user_id: params[:user_id])
-  @note.save
+  Note.create(content: params[:content], truck_id: params[:truck_id], user_id: params[:user_id])
   redirect back
 end
 
-
 # RATINGS
 
-post '/notes' do
-  @rating = Rating.create(score: params[:score], truck_id: params[:truck_id], user_id: params[:user_id])
-  @rating.save
+post '/ratings' do
+  Rating.create(score: params["score"].to_i, truck_id: params["truck_id"].to_i, user_id: params["user_id"].to_i)
   redirect back
 end
 
