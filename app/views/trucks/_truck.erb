@@ -1,7 +1,9 @@
   <div class="truck-box">
     <img src="<%= t.image_small %>" width="290" height="210" />
     <h5><a href="/trucks/<%= t.slug %>"><%= t.name %></a></h5>
+    <em><%= t.cuisine %></em>
+    <br />
     <p><%= t.description %></p>
-    Cuisine: <%= t.cuisine %>
-    <a href="/trucks/<%= t.website %>"><%= t.website %>
+    <a href="/trucks/<%= t.website %>">Website</a>
+    <br/ ><br/ >
   </div>
