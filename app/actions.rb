@@ -46,7 +46,7 @@ post '/users/login' do
     redirect '/'
   else
     @error = "Wrong email or password"
-    erb :index
+    redirect back
   end
 end
 
