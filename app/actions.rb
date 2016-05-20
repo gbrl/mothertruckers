@@ -27,13 +27,12 @@ post '/trucks/:id/favourite' do
 end
 
 # USERS
-get '/users' do
+get '/login' do
   @users = User.all
   erb :'users/index'
 end
 
-
-get '/users/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end

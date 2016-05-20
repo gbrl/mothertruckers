@@ -19,9 +19,9 @@
       <li><a href="/">Trucks Near You</a></li>
       <li><a href="/trucks">All Trucks</a></li>
       <% if current_user %>
-      <li><a href="/users/logout">Logout</a></li>
+      <li><a href="/logout">Logout</a></li>
       <% else %>
-      <li><a href="/users">Login/Register</a></li>
+      <li><a href="/login">Login/Register</a></li>
       <% end %>
       <%= erb :'_searchbar' %>
     </ul>
