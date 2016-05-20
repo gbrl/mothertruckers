@@ -9,6 +9,7 @@ end
 
 
 get '/profile' do
+  @user = current_user if current_user
   @notes = current_user.notes if current_user
   @favourites = current_user.favourites if current_user
   erb :'users/show'
