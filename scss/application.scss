@@ -57,10 +57,18 @@ body {
     #all-trucks {
 
       .truck-box {
+      padding-bottom: 20px;
       float: left;
       width: 290px !important;
 
-      h3 {margin-top: 30px}
+      img {
+        margin-bottom: 5px
+      }
+
+      h5 {
+        margin: 5px 0 10px 0
+      }
+  
       }
     }
 
