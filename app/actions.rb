@@ -20,6 +20,7 @@ end
 
 get '/trucks/:slug' do
   @note = Note.new
+  @rating = Rating.new
   @truck = Truck.find_by_slug(params[:slug])
   erb :'/trucks/show'
 end
@@ -78,6 +79,15 @@ end
 post '/notes' do
   @note = Note.create(content: params[:content], truck_id: params[:truck_id], user_id: params[:user_id])
   @note.save
+  redirect back
+end
+
+
+# RATINGS
+
+post '/notes' do
+  @rating = Rating.create(score: params[:score], truck_id: params[:truck_id], user_id: params[:user_id])
+  @rating.save
   redirect back
 end
 
