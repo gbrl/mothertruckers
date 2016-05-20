@@ -50,6 +50,11 @@ body {
     display: block;
   }
 
+  #map {
+    width: 100%;
+    height: 400px
+  }
+
   .hidden {display: none}
 
   div.svg {
