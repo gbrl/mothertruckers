@@ -7,7 +7,7 @@
       <input type="hidden" name="truck_id" value="<%= @truck.id %>">
       <input type="hidden" name="user_id" value="<%= current_user.id if current_user %>">
       <div class="rateit svg" data-rateit-backingfld="#stars" data-rateit-resetable="false"  data-rateit-ispreset="true"
-    data-rateit-min="0" data-rateit-max="5" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
+    data-rateit-min="0" data-rateit-max="5" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-value="<%= @truck.rating.to_i %>" <%= 'data-rateit-readonly="true"' unless current_user %>></div>
     </div>
     <br />
     <input type="submit" value="Submit" class="hidden">
