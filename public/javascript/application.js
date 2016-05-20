@@ -7,6 +7,7 @@ $(document).ready(function() {
     itemSelector: '.truck-box',
     columnWidth: 310
   });
+  $grid.masonry('layout');
 
   // SETUP SEARCH BEHAVIOUR
 
@@ -22,19 +23,13 @@ $(document).ready(function() {
      $("#all-trucks .truck-box").each(function(){
        var text = $(this).text().toLowerCase().trim();
        if (text.indexOf(valThis) >= 0) {
-         console.log("Found a match.");
-         // console.log(text);
-         //$(this).show()
-         //thangs.push($(this)[ 0 ]);
-         $grid.masonry('addItems', $(this)[ 0 ]).masonry('layout');
+         $(this).show();
+         $grid.masonry('layout');
        } else {
-         //thangs.push($(this)[ 0 ]);
-         $grid.masonry('remove', $(this)[ 0 ]).masonry('layout');
+         $(this).hide();
+         $grid.masonry('layout');
        }
-    });
-
-    //console.log(thangs);
-    
+    });    
   });
 
     
