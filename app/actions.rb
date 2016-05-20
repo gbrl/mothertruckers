@@ -18,16 +18,13 @@ get '/trucks' do
   erb :'/trucks/index'
 end
 
-
 get '/trucks/:slug' do
   @truck = Truck.find_by_slug(params[:slug])
   erb :'/trucks/show'
 end
 
-
 post '/trucks/:id/favourite' do
 end
-
 
 # USERS
 get '/users' do
