@@ -1,9 +1,16 @@
 <h1><a href="<%= @truck.website %>"><%= @truck.name %></a></h1>
 <img src="<%= @truck.image_large %>" />
-<p><%= @truck.description %><p>
+<p><%= @truck.description %></p>
 
-<form id="myNote" method="post">
-  <label>Add personal note:</label>
-  <input type="text" placeholder="Everyone's a critic!">
-  <input type="Submit" class="button"></button>
-</form>
+<section class="note-form">
+  <h5>Write a personal note!</h5>
+  <% if current_user %>
+  <form method="post">
+    <label>Content:</label>
+    <input type="text" placeholder="Everyone's a critic!">
+    <input type="Submit" class="button"></button>
+  </form>
+  <% else %>
+  <p>You must be <a href="/users">logged in</a> to leave a note.</p>
+  <% end %>
+</section>
