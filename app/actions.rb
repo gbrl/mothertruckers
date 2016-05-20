@@ -8,6 +8,7 @@ helpers do
 end
 
 get '/' do
+  @stops = Stop.limit(2)
   erb :index
 end
 

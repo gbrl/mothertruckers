@@ -33,6 +33,9 @@ body {
     margin-top: 50px; }
   body #main-content {
     display: block; }
+  body #map {
+    width: 100%;
+    height: 400px; }
   body .hidden {
     display: none; }
   body div.svg {
