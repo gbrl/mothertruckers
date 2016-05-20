@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
-  <script src="/javascript/application.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
-
+  <link href="https://rawgit.com/gjunge/rateit.js/master/scripts/rateit.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/stylesheets/application.css">
 
+
   <title>MOTHER TRUCKERS</title>
-</head>
-<body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="/trucks">All Trucks</a></li>
-      <li><a href="/">Trucks Near You</a></li>
-      <% if current_user %>
-      <li><a href="/users/logout">Logout</a></li>
-      <% else %>
-      <li><a href="/users">Login/Register</a></li>
-      <% end %>
-      <li><form id="search"><input type="text" name="query"></form></li>
-    </ul>
-  </nav>
-</header>
-<section id="main-content">
-  <%= yield %>
-</section>
-</body>
-</html>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+  <script src="/javascript/masonry.pkgd.min.js"></script>
+  <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
+  <script src="/javascript/application.js"></script>
+
+  </head>
+  <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Trucks Near You</a></li>
+        <li><a href="/trucks">All Trucks</a></li>
+        <% if current_user %>
+        <li><a href="/logout">Logout</a></li>
+        <% else %>
+        <li><a href="/login">Login/Register</a></li>
+        <% end %>
+        <%= erb :'_searchbar' %>
+      </ul>
+    </nav>
+  </header>
+  <section id="main-content">
+    <%= yield %>
+  </section>
+  </body>
+  </html>
 

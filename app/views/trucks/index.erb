@@ -1,14 +1,8 @@
-<div class="jumbotron text-center">
   <h1>All Trucks</h1>
-</div>
-<hr/>
 
+<hr/>
+<div id="all-trucks">
 <% @trucks.each do |t| %>
-  <div>
-    <h1><a href="/trucks/<%= t.slug %>"><%= t.name %></a></h1>
-    <p><%= t.description %></p>
-    <p>Cuisine: <%= t.cuisine %></p>
-    <p><a href="<%= t.website %>"><%= t.website %></p>
-    <img src="<%= t.image_small %>" />
-  </div>
+  <%= erb :'trucks/_truck', locals: {t: t}   %>
 <% end %>
+</div>

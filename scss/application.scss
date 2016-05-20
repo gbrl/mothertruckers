@@ -48,6 +48,29 @@ body {
 
   #main-content {
     display: block;
+
+    #all-trucks {
+      
+      .truck-box {
+      float: left;
+      width: 290px !important;
+
+      h3 {margin-top: 30px}
+      }
+    }
+
+    .truck-notes {margin-bottom: 30px}
+    
+
+    #stars-input  {
+      margin-top: -38px;
+
+    strong {
+      position: relative;
+      top: -8px;
+      margin-right: 10px
+      }
+    }
   }
 
   #map {

@@ -8,7 +8,7 @@ helpers do
 end
 
 get '/' do
-  @stops = Stop.limit(80)
+  @stops = Stop.all
   erb :index
 end
 
@@ -18,25 +18,23 @@ get '/trucks' do
   erb :'/trucks/index'
 end
 
-
 get '/trucks/:slug' do
+  @note = Note.new
+  @rating = Rating.new
   @truck = Truck.find_by_slug(params[:slug])
   erb :'/trucks/show'
 end
 
-
 post '/trucks/:id/favourite' do
 end
 
-
 # USERS
-get '/users' do
+get '/login' do
   @users = User.all
   erb :'users/index'
 end
 
-
-get '/users/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end
@@ -73,6 +71,24 @@ get '/users/:id/favourites' do
 end
 
 get '/users/:id/favourites/:id/delete' do
+end
+
+
+# NOTES
+
+post '/notes' do
+  @note = Note.create(content: params[:content], truck_id: params[:truck_id], user_id: params[:user_id])
+  @note.save
+  redirect back
+end
+
+
+# RATINGS
+
+post '/notes' do
+  @rating = Rating.create(score: params[:score], truck_id: params[:truck_id], user_id: params[:user_id])
+  @rating.save
+  redirect back
 end
 
 
