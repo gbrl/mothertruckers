@@ -15,25 +15,25 @@
   <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
   <script src="/javascript/application.js"></script>
 
-  </head>
-  <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Trucks Near You</a></li>
-        <li><a href="/trucks">All Trucks</a></li>
-        <% if current_user %>
-        <li><a href="/logout">Logout</a></li>
-        <% else %>
-        <li><a href="/login">Login/Register</a></li>
-        <% end %>
-        <%= erb :'_searchbar' %>
-      </ul>
-    </nav>
-  </header>
-  <section id="main-content">
-    <%= yield %>
-  </section>
-  </body>
-  </html>
-
+  <title>Mother Truckers</title>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Trucks Near You</a></li>
+      <li><a href="/trucks">All Trucks</a></li>
+      <% if current_user %>
+      <li><a href="/logout">Logout</a></li>
+      <% else %>
+      <li><a href="/login">Login/Register</a></li>
+      <% end %>
+      <%= erb :'_searchbar' %>
+    </ul>
+  </nav>
+</header>
+<section id="main-content">
+  <%= yield %>
+</section>
+</body>
+</html>
