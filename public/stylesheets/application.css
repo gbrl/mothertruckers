@@ -73,9 +73,5 @@ body {
     *background: url(star-preset.svg);
     /* For IE 6 and 7 */
     background-size: contain; }
-    .container{
-        width:600px;
-        margin:50px auto;
-    }
 
 /*# sourceMappingURL=application.css.map */
