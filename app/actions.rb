@@ -19,6 +19,7 @@ get '/trucks' do
 end
 
 get '/trucks/:slug' do
+  @note = Note.new
   @truck = Truck.find_by_slug(params[:slug])
   erb :'/trucks/show'
 end
@@ -69,6 +70,15 @@ get '/users/:id/favourites' do
 end
 
 get '/users/:id/favourites/:id/delete' do
+end
+
+
+# NOTES
+
+post '/notes' do
+  @note = Note.create(content: params[:content], truck_id: params[:truck_id], user_id: params[:user_id])
+  @note.save
+  redirect back
 end
 
 

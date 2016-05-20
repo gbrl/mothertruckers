@@ -38,6 +38,8 @@ body {
       width: 290px !important; }
       body #main-content #all-trucks .truck-box h3 {
         margin-top: 30px; }
+    body #main-content .truck-notes {
+      margin-bottom: 30px; }
   body #map {
     width: 100%;
     height: 400px; }
