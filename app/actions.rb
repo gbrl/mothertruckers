@@ -7,6 +7,13 @@ helpers do
   end
 end
 
+
+get '/profile' do
+  @notes = current_user.notes if current_user
+  @favourites = current_user.favourite if current_user
+  erb :'users/show'
+end
+
 get '/' do
   @stops = Stop.all
   erb :index
