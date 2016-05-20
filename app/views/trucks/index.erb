@@ -3,6 +3,6 @@
 <hr/>
 <div id="all-trucks">
 <% @trucks.each do |t| %>
-<%= erb :'trucks/_truck', locals: {t: t}   %>
+  <%= erb :'trucks/_truck', locals: {t: t}   %>
 <% end %>
 </div>
