@@ -94,6 +94,16 @@ body {
     }
   }
 
+
+  div.stop-info {
+    max-width: 300px; 
+    float: left; 
+    height: 200px; 
+    padding: 10px; 
+    margin: 10px; 
+    border: 1px solid #eee;
+  }
+
   #map {
     width: 100%;
     height: 400px;
