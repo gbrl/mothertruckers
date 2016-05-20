@@ -57,9 +57,13 @@ body {
     #all-trucks {
       
       .truck-box {
-      padding-bottom: 20px;
-      float: left;
-      width: 290px !important;
+        padding: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        border: 1px solid #eee;  
+        padding-bottom: 20px;
+        float: left;
+        width: 290px !important;
+        margin: 5px 0 !important;
 
       img {
         margin-bottom: 5px

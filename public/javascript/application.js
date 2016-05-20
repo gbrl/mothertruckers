@@ -5,7 +5,7 @@ $(document).ready(function() {
   $grid.masonry({
   // options
     itemSelector: '.truck-box',
-    columnWidth: 320
+    columnWidth: 300
   });
   $grid.masonry('layout');
 
