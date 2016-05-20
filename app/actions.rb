@@ -1,5 +1,5 @@
 # HOME
-helpers do 
+helpers do
   def current_user
     if session[:id] and user = User.find(session[:id])
       user
@@ -65,7 +65,7 @@ get '/users/:id' do
 end
 
 
-# FAVOURITES 
+# FAVOURITES
 
 get '/users/:id/favourites' do
 end
@@ -96,6 +96,3 @@ end
 
 get '/search' do
 end
-
-
-
