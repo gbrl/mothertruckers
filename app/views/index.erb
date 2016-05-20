@@ -6,6 +6,17 @@
           center: {lat: pos["lat"], lng: pos["lng"]},
           zoom: 18
         });
+
+
+        var marker = new google.maps.Marker({
+        position: pos,
+        title:"You!"
+        });
+
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+
+
       }
 
       function getCurrentLocation(){
@@ -26,6 +37,9 @@
       function startMap(){
         getCurrentLocation();
       }
+
+
+
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=startMap" async defer></script>
