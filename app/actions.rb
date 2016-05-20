@@ -10,7 +10,7 @@ end
 
 get '/profile' do
   @notes = current_user.notes if current_user
-  @favourites = current_user.favourite if current_user
+  @favourites = current_user.favourites if current_user
   erb :'users/show'
 end
 
