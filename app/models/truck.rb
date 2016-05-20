@@ -6,6 +6,10 @@ class Truck < ActiveRecord::Base
   has_many :stops, dependent: :destroy
   has_many :ratings
 
+  def rating
+    rating = self.ratings.average(:score)
+  end
+
   private
 
   def make_slug
@@ -15,5 +19,4 @@ class Truck < ActiveRecord::Base
   def self.open
     Truck.all.map { |t| t.stops.length > 0 }
   end
-
 end
