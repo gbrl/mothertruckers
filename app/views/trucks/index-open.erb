@@ -1,0 +1,7 @@
+<h2>Open Trucks</h2>
+<h4><a href="/trucks">See all trucks.</a></h4>
+<div id="all-trucks">
+<% @trucks.each do |t| %>
+  <%= erb :'trucks/_truck_open', locals: {t: t}   %>
+<% end %>
+</div>

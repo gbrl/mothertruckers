@@ -23,7 +23,12 @@ end
 # TRUCKS
 get '/trucks' do
   @trucks = Truck.all
-  erb :'/trucks/index'
+  erb :'/trucks/index-all'
+end
+
+get '/open-trucks' do
+  @trucks = Truck.open
+  erb :'/trucks/index-open'
 end
 
 get '/trucks/:slug' do

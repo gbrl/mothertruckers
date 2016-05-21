@@ -4,7 +4,7 @@
 
 body {
   color: #333;
-  padding: 5%; }
+  padding: 4%; }
   body header nav {
     display: block;
     width: 100%;
@@ -52,10 +52,16 @@ body {
         body #main-content #profile-table tr td {
           padding: 20px 0 0 0 !important;
           vertical-align: top; }
+    body #main-content #all-trucks .open-truck {
+      background-color: #c51820 !important; }
+      body #main-content #all-trucks .open-truck h5 a, body #main-content #all-trucks .open-truck a.website-link, body #main-content #all-trucks .open-truck p {
+        color: white !important; }
+      body #main-content #all-trucks .open-truck em {
+        color: black !important; }
     body #main-content #all-trucks .truck-box {
       padding: 20px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-      border: 1px solid #eee;
+      border: 2px solid #eee;
       padding-bottom: 20px;
       float: left;
       width: 290px !important;
