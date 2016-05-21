@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
-    <link href="https://rawgit.com/gjunge/rateit.js/master/scripts/rateit.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/stylesheets/application.css">
-
     <title>Truckle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/gjunge/rateit.js/master/scripts/rateit.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
   </head>
 <body>
-<header>
-<div id="logo">
-<a href="/"><img src="/images/logo.png" width=200 height=58/></a>
-</div>
-  <nav>
-    <ul>
-      <li><a href="/">Trucks Near You</a></li>
-      <li><a href="/trucks">All Trucks</a></li>
-      <% if current_user %>
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
-      <% else %>
-      <li><a href="/login">Login/Register</a></li>
-      <% end %>
-      <%= erb :'_searchbar' %>
-    </ul>
-  </nav>
-</header>
-<section id="main-content">
-  <%= yield %>
-</section>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
-<script src="/javascript/masonry.pkgd.min.js"></script>
-<script src="/javascript/imagesloaded.pkgd.min.js"></script>
-<script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
-<script src="//cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
-<script src="/javascript/application.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=getLocation" async defer></script>
+  <header>
+  <div id="logo">
+  <a href="/"><img src="/images/logo.png" width=200 height=58/></a>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="/">Trucks Near You</a></li>
+        <li><a href="/trucks">All Trucks</a></li>
+        <% if current_user %>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% else %>
+        <li><a href="/login">Login/Register</a></li>
+        <% end %>
+        <%= erb :'_searchbar' %>
+      </ul>
+    </nav>
+  </header>
+  <section id="main-content">
+    <%= yield %>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+  <script src="/javascript/masonry.pkgd.min.js"></script>
+  <script src="/javascript/imagesloaded.pkgd.min.js"></script>
+  <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
+  <script src="//cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
+  <script src="/javascript/application.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=showMap" async defer></script>
 
 
 </body>

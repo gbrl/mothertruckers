@@ -59,7 +59,7 @@
   <p><strong><font color="c51820"> CLOSED </strong></p>
 <% end %>
 
-
+<% if @truck.open? %>
 <script>
   var map;
   var LatLng = {
@@ -78,12 +78,12 @@
     marker.setMap(map);
   }
 
-  function getLocation() {
+  function showMap() {
     initMap();
   }
 
   </script>
-
+<% end %>
 
 
 

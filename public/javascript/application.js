@@ -87,30 +87,31 @@ $(document).ready(function() {
 
   // LAUNCH MASONRY
 
-  $grid = $('#all-trucks');
-  $grid.masonry({
-  // options
-    itemSelector: '.truck-box',
-    columnWidth: 300
-  });
-  $grid.imagesLoaded().progress( function() {
-    $grid.masonry('layout');
+  if($('#all-trucks').length > 0) {
+    $grid = $('#all-trucks');
+    $grid.masonry({
+    // options
+      itemSelector: '.truck-box',
+      columnWidth: 300
+    });
+    $grid.imagesLoaded().progress( function() {
+      $grid.masonry('layout');
 
-    var search_query = location.search;
-    search_query = search_query.replace("?","");
-    if (search_query.length > 0) {
-      $("#all-trucks .truck-box").each(function(){
-          var text = $(this).text().toLowerCase().trim();
-           if (text.indexOf(search_query) >= 0) {
-             $(this).show();
-             $grid.masonry('layout');
-           } else {
-             $(this).hide();
-             $grid.masonry('layout');
-           }
-        });
-    }
-
-  });
+      var search_query = location.search;
+      search_query = search_query.replace("?","");
+      if (search_query.length > 0) {
+        $("#all-trucks .truck-box").each(function(){
+            var text = $(this).text().toLowerCase().trim();
+             if (text.indexOf(search_query) >= 0) {
+               $(this).show();
+               $grid.masonry('layout');
+             } else {
+               $(this).hide();
+               $grid.masonry('layout');
+             }
+          });
+      }
+    });
+  }
 
 });

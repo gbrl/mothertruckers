@@ -35,8 +35,12 @@ get '/trucks/:slug' do
   @note = Note.new
   @rating = Rating.new
   @truck = Truck.find_by_slug(params[:slug])
-  @lat = @truck.stops.try(:last).try(:latitude)
-  @long = @truck.stops.try(:last).try(:longitude)
+
+  if @truck.open?
+    @lat = @truck.current_stop.latitude
+    @long = @truck.current_stop.longitude
+  end
+
   erb :'/trucks/show'
 end
 
