@@ -16,7 +16,7 @@ get '/profile' do
 end
 
 get '/' do
-  @stops = Stop.all
+  @stops = Stop.open
   erb :index
 end
 
