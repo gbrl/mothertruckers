@@ -108,7 +108,7 @@
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=showMap" async defer></script>
-
+    
     <div id="front-page-stops" class="clearfix">
     <% @stops.each do |stop| %>
       <%= erb :'_stop', locals: {stop: stop}   %>
