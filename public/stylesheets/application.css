@@ -36,8 +36,7 @@ body {
     width: 100%;
     max-width: 100% !important; }
   body form {
-    max-width: 460px;
-    margin-top: 50px; }
+    max-width: 460px; }
   body #main-content {
     display: block;
     padding-bottom: 50px;

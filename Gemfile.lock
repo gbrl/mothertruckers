@@ -58,6 +58,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    sass (3.4.22)
     shotgun (0.9.1)
       rack (>= 1.0)
     sinatra (1.4.6)
@@ -96,9 +97,13 @@ DEPENDENCIES
   puma
   rake
   rspec
+  sass
   shotgun
   sinatra
   sinatra-activerecord
   sinatra-contrib
   sqlite3
   tux
+
+BUNDLED WITH
+   1.11.2

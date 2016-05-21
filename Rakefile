@@ -27,3 +27,8 @@ task 'db:populate' do
   AppConfig.establish_connection
   TrucksImporter.new.import
 end
+
+desc 'build sass file(s)'
+task 'sass:build' do
+  `sass scss/application.scss public/stylesheets/application.css`
+end
