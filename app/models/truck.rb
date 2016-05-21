@@ -10,13 +10,37 @@ class Truck < ActiveRecord::Base
     rating = self.ratings.average(:score)
   end
 
+  def self.open
+    open_truck_ids = []
+    trucks = Truck.all
+    trucks.each do |t|
+      next if t.stops.count < 1
+      t.stops.each do |stop|
+          if ((stop.from < Time.now) && (stop.to > Time.now))
+            open_truck_ids << stop.truck_id
+          end
+      end
+    end
+
+    @open_trucks = Truck.where(id: open_truck_ids)
+  end
+
+  def open?
+    response = false
+    stops = self.stops
+    stop_ids = []
+      stops.each do |stop|
+        if ((stop.from < Time.now) && (stop.to > Time.now))
+          response = stop
+        end
+      end
+    return response
+  end
+  
   private
 
   def make_slug
     self.slug = self.name.downcase.gsub(" ","-").gsub(".","").gsub("&","and").gsub("/","").gsub("?","").gsub("'","")
   end
 
-  def self.open
-    Truck.all.map { |t| t.stops.length > 0 }
-  end
 end
