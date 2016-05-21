@@ -81,6 +81,15 @@ body {
       }
     }
 
+    #show-truck {
+
+      td{
+        width: 50%;
+        vertical-align: top;
+        padding: 0 !important;
+      }
+
+    }
     #all-trucks {
 
       .open-truck {background-color: #c51820 !important;

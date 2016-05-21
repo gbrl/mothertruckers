@@ -3,6 +3,9 @@
 <%= @truck.escaped_current_stop_lat_lng %>" class="small button" target="_blank"/>GET DIRECTIONS &rarr;</a>
 <% end %></h1>
 
+<table id="show-truck">
+<tr>
+<td width="50%">
 <img src="<%= @truck.image_large %>" />
 <form method="post" action="/ratings" id="ratings-form">
     <div id="stars-input">
@@ -16,7 +19,8 @@
     <br />
     <input type="submit" value="Submit" class="hidden">
 </form>
-
+</td>
+<td width="50%">
 <% if @truck.open? %>
 <p><strong class="open-message">This truck is currently open at <%= @truck.current_stop.name + "!" %></strong></p>
 <% end %>
@@ -30,12 +34,12 @@
 <section class="truck-notes">
 <% @truck.notes.where(user_id: current_user.id).each do |n| %>
   <div class="note">
-  Your notes: <strong>"<%= n.content %>"</strong>
+  <strong>Your Notes</strong><br /> "<%= n.content %>"
   </div>
 <% end %>
 </section>
 <% end %>
-
+<% unless @truck.notes.where(user_id: current_user.id).length > 0 %>
 <section class="note-form">
   <h5>Write a personal note!</h5>
   <% if current_user %>
@@ -49,6 +53,9 @@
   <p>You must be <a href="/login">logged in</a> to leave a note.</p>
   <% end %> 
   </section> 
+<% end %>
+</td></tr>
+</table>
 
 <% if @truck.open? %>
   <p><strong><font color="green"> OPEN NOW </font></strong><font color="grey"> until </font><%= @truck.stops.last.to.strftime("%I:%M %p") %></p>

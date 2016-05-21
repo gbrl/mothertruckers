@@ -57,6 +57,10 @@ body {
         body #main-content #profile-table tr td {
           padding: 20px 0 0 0 !important;
           vertical-align: top; }
+    body #main-content #show-truck td {
+      width: 50%;
+      vertical-align: top;
+      padding: 0 !important; }
     body #main-content #all-trucks .open-truck {
       background-color: #c51820 !important; }
       body #main-content #all-trucks .open-truck h5 a, body #main-content #all-trucks .open-truck a.website-link {
