@@ -39,7 +39,7 @@
 <% end %>
 </section>
 <% end %>
-<% unless @truck.notes.where(user_id: current_user.id).length > 0 %>
+<% if current_user && @truck.notes.where(user_id: current_user.id).length == 0 %>
 <section class="note-form">
   <h5>Write a personal note!</h5>
   <% if current_user %>
