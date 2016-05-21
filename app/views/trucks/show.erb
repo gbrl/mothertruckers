@@ -14,31 +14,28 @@
 </form>
 
 <p><%= @truck.description %></p>
-<% user_already_wrote_note = false %>
-<% if @truck.notes.length > 0 %>
+
+<% if current_user %>
 <section class="truck-notes">
-  <% @truck.notes.each do |n| %>
-    <% if current_user && n.user_id == current_user.id %>
-    <% user_already_wrote_note = true %>
-    <div class="note">
-    Your notes: <strong>"<%= n.content %>"</strong>
-    </div>
-    <% end %>
-  <% end %>
-  </section>
-<% elsif user_already_wrote_note == false  %>
-  <section class="note-form">
-    <h5>Write a personal note!</h5>
-    <% if current_user %>
-    <form method="post" action="/notes">
-      <label>Content:</label>
-      <input type="text" name="content" placeholder="Everyone's a critic!">
-      <input type="hidden" name="truck_id" value="<%= @truck.id %>">
-      <input type="hidden" name="user_id" value="<%= current_user.id %>">
-      <input type="Submit" class="button"></button>
-    </form>
-    <% else %>
-    <p>You must be <a href="/users">logged in</a> to leave a note.</p>
-    <% end %>
-  </section>
+<% @truck.notes.where(user_id: current_user.id).each do |n| %>
+  <div class="note">
+  Your notes: <strong>"<%= n.content %>"</strong>
+  </div>
 <% end %>
+</section>
+<% end %>
+
+<section class="note-form">
+  <h5>Write a personal note!</h5>
+  <% if current_user %>
+  <form method="post" action="/notes">
+    <label>Content:</label>
+    <input type="text" name="content" placeholder="Everyone's a critic!">
+    <input type="hidden" name="truck_id" value="<%= @truck.id %>">
+    <input type="hidden" name="user_id" value="<%= current_user.id %>">
+    <input type="Submit" class="button"></button>
+  </form>
+  <% else %>
+  <p>You must be <a href="/login">logged in</a> to leave a note.</p>
+  <% end %>
+</section>
