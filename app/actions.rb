@@ -38,7 +38,6 @@ end
 
 # USERS
 get '/login' do
-  @users = User.all
   erb :'users/index'
 end
 
@@ -53,8 +52,9 @@ post '/users/login' do
     session[:id] = @user.id
     redirect '/'
   else
-    @error = "Wrong email or password"
-    redirect back
+    @email = params[:email]
+    @error = "Oops! There was something wrong with your email or password."
+    erb :'users/index'
   end
 end
 
