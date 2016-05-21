@@ -1,6 +1,6 @@
 
   <div class="truck-box">
-    <img src="<%= t.image_small %>" width="290" height="210" class="truck-small-image"/>
+    <a href="/trucks/<%= t.slug %>"><img src="<%= t.image_small %>" width="290" height="210" class="truck-small-image"/></a>
     <% if current_user %>
     <a href="" class="heart-live-anchor" userid="<%=current_user.id%>" truckid="<%=t.id%>">
     <% else %>
