@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519202527) do
+ActiveRecord::Schema.define(version: 20160521184527) do
 
   create_table "favourites", force: :cascade do |t|
     t.integer "truck_id"
     t.integer "user_id"
   end
+
+  add_index "favourites", ["truck_id"], name: "index_favourites_on_truck_id"
+  add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
 
   create_table "notes", force: :cascade do |t|
     t.integer  "truck_id"
@@ -25,6 +28,9 @@ ActiveRecord::Schema.define(version: 20160519202527) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "notes", ["truck_id"], name: "index_notes_on_truck_id"
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "score"
@@ -43,6 +49,8 @@ ActiveRecord::Schema.define(version: 20160519202527) do
     t.float    "longitude"
   end
 
+  add_index "stops", ["truck_id"], name: "index_stops_on_truck_id"
+
   create_table "trucks", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -57,11 +65,16 @@ ActiveRecord::Schema.define(version: 20160519202527) do
     t.string   "slug"
   end
 
+  add_index "trucks", ["name"], name: "index_trucks_on_name"
+  add_index "trucks", ["slug"], name: "index_trucks_on_slug"
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email"
 
 end
