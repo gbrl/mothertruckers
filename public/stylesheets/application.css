@@ -45,6 +45,7 @@ body {
     max-width: 460px;
     margin-top: 10px; }
   body #main-content {
+    min-height: 200px;
     padding: 20px 20px 20px 23px;
     background-color: white;
     max-width: 1243px;

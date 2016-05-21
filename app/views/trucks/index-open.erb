@@ -1,7 +1,12 @@
 <h2>Open Trucks</h2>
+<% unless @trucks.length == 0 %>
 <h4><a href="/trucks">See all trucks.</a></h4>
-<div id="all-trucks">
+<% end %>
+<div id="all-trucks" class="clearfix">
 <% @trucks.each do |t| %>
   <%= erb :'trucks/_truck_open', locals: {t: t}   %>
+<% end %>
+<% if @trucks.length == 0 %>
+<h3>There are no food trucks currently open. <a href="/trucks">See all trucks.</a></h3>
 <% end %>
 </div>
