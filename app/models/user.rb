@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :email, presence: true, length: { minimum: 1 }, uniqueness: true
+  validates :password, presence: true, length: { minimum: 1 }
   has_many :notes, dependent: :destroy
   has_many :addresses, dependent: :destroy
   has_many :favourites, dependent: :destroy
