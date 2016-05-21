@@ -77,11 +77,12 @@
         }
     </script>
 
-    <div id="front-page-stops">
+    <div id="front-page-stops" class="clearfix">
     <% @stops.each do |stop| %>
     <div class="stop-info">
-    <strong><%= stop.name %></strong>
-    <p><%= stop.from.to_formatted_s(:long_ordinal) %> to <%= stop.to.to_formatted_s(:long_ordinal) %></p>
+    <strong><a href="/trucks/<%= stop.truck.slug %>"><%= stop.truck.name %></a></strong><br />
+    <%= stop.name %><br />
+    <%= stop.from.strftime("%l:%M %p") %> to <%= stop.to.strftime("%l:%M %p") %>
     </div>
     <% end %>
     </div>

@@ -10,6 +10,21 @@ class Truck < ActiveRecord::Base
     rating = self.ratings.average(:score)
   end
 
+  def current_stop
+    stop = self.open?
+  end
+
+  def escaped_current_stop_lat_lng
+    address = ''
+    stop = self.open?
+    puts stop
+    if stop
+      address = "#{stop.latitude.to_s},#{stop.longitude.to_s}"
+      puts address
+    end
+    return address
+  end
+
   def self.open
     open_truck_ids = []
     trucks = Truck.all

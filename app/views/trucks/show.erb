@@ -1,4 +1,8 @@
-<h1><a href="<%= @truck.website %>"><%= @truck.name %></a></h1>
+<h1><%= @truck.name %><% if @truck.open? %>
+<a href="https://maps.google.com?saddr=Current+Location&daddr=
+<%= @truck.escaped_current_stop_lat_lng %>" class="small button" target="_blank"/>GET DIRECTIONS &rarr;</a>
+<% end %></h1>
+
 <img src="<%= @truck.image_large %>" />
 <form method="post" action="/ratings" id="ratings-form">
     <div id="stars-input">
@@ -13,7 +17,14 @@
     <input type="submit" value="Submit" class="hidden">
 </form>
 
+<% if @truck.open? %>
+<p><strong class="open-message">This truck is currently open at <%= @truck.current_stop.name + "!" %></strong></p>
+<% end %>
+<% if @truck.cuisine.to_s.length > 1 %>
+<p>Cuisine: <%= @truck.cuisine %></p>
+<% end %>
 <p><%= @truck.description %></p>
+<p>Visit <a href="<%= @truck.website %>"><%= @truck.name %>'s website</a></p>
 
 <% if current_user %>
 <section class="truck-notes">
@@ -29,7 +40,6 @@
   <h5>Write a personal note!</h5>
   <% if current_user %>
   <form method="post" action="/notes">
-    <label>Content:</label>
     <input type="text" name="content" placeholder="Everyone's a critic!">
     <input type="hidden" name="truck_id" value="<%= @truck.id %>">
     <input type="hidden" name="user_id" value="<%= current_user.id %>">

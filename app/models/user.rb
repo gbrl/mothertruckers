@@ -6,4 +6,14 @@ class User < ActiveRecord::Base
   has_many :favourites, dependent: :destroy
   has_many :trucks, through: :favourites
   has_many :ratings, dependent: :destroy
+
+  def favourite_truck_ids
+    ids = []
+    favourites = self.favourites
+    favourites.each do |f|
+      ids << f.truck_id
+    end
+    return ids
+  end
+
 end
