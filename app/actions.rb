@@ -82,12 +82,14 @@ end
 
 # FAVOURITES
 
-get '/users/:id/favourites' do
+post '/users/:user_id/favourites/:truck_id' do
+  fave = Favourite.where(truck_id: params["truck_id"].to_i, user_id: params["user_id"].to_i)
+  if fave
+    Favourite.destroy(fave[0].id)
+  else
+    Favourite.create(truck_id: params["truck_id"].to_i, user_id: params["user_id"].to_i) 
+  end
 end
-
-get '/users/:id/favourites/:id/delete' do
-end
-
 
 # NOTES
 

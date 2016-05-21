@@ -59,6 +59,18 @@ body {
     margin-bottom: 25px;
     border-bottom: 5px solid #eee;
 
+    #profile-table {
+      margin-top: 20px;
+      border: none !important;
+
+      tr {
+        border-top: 5px solid #eee;
+        margin-top: 20px;
+
+        td {padding: 20px 0 0 0 !important}
+      }
+    }
+
     #all-trucks {
 
       .truck-box {
@@ -70,8 +82,14 @@ body {
         width: 290px !important;
         margin: 5px 0 !important;
 
-      img {
+      img.truck-small-image {
         margin-bottom: 5px;
+      }
+
+
+      img.hearted, img.heart{
+        margin-top: -80px;
+        margin-left: 10px;
       }
 
       h5 {
@@ -115,9 +133,12 @@ body {
 
   .hidden {display: none}
 
+  table tbody {  border: none !important; }
+
   div.svg {
     font-size: 32px !important;
   }
+
 
   div.svg div.rateit-range {
     background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTVweCIgaGVpZ2h0PSIxNXB4Ij4NCiAgPHRleHQgeD0iMCIgeT0iMTUiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE4Ij7inKY8L3RleHQ+DQo8L3N2Zz4=') /*star-normal.svg*/;

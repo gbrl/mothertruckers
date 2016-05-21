@@ -43,6 +43,14 @@ body {
     padding-bottom: 50px;
     margin-bottom: 25px;
     border-bottom: 5px solid #eee; }
+    body #main-content #profile-table {
+      margin-top: 20px;
+      border: none !important; }
+      body #main-content #profile-table tr {
+        border-top: 5px solid #eee;
+        margin-top: 20px; }
+        body #main-content #profile-table tr td {
+          padding: 20px 0 0 0 !important; }
     body #main-content #all-trucks .truck-box {
       padding: 20px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
@@ -51,8 +59,11 @@ body {
       float: left;
       width: 290px !important;
       margin: 5px 0 !important; }
-      body #main-content #all-trucks .truck-box img {
+      body #main-content #all-trucks .truck-box img.truck-small-image {
         margin-bottom: 5px; }
+      body #main-content #all-trucks .truck-box img.hearted, body #main-content #all-trucks .truck-box img.heart {
+        margin-top: -80px;
+        margin-left: 10px; }
       body #main-content #all-trucks .truck-box h5 {
         margin: 5px 0 1px 0; }
       body #main-content #all-trucks .truck-box a {
@@ -78,6 +89,8 @@ body {
     background-color: #B3D1FF; }
   body .hidden {
     display: none; }
+  body table tbody {
+    border: none !important; }
   body div.svg {
     font-size: 32px !important; }
   body div.svg div.rateit-range {

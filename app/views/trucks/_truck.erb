@@ -1,5 +1,16 @@
   <div class="truck-box">
-    <img src="<%= t.image_small %>" width="290" height="210" />
+    <img src="<%= t.image_small %>" width="290" height="210" class="truck-small-image"/>
+    <% if current_user %>
+    <a href="" class="heart-live-anchor" userid="<%=current_user.id%>" truckid="<%=t.id%>">
+    <% else %>
+    <a href="#" >
+    <% end %>
+    <% if current_user && (current_user.favourite_truck_ids.include? t.id) %>
+      <img src="/images/heart_red.png" height="25" width="25" class="hearted" />
+    <% else %>
+      <img src="/images/heart.png" height="25" width="25" class="heart" />
+    <% end %>
+    </a>
     <h5><a href="/trucks/<%= t.slug %>"><%= t.name %></a></h5>
     <em><%= t.cuisine %></em>
     <br /><br />

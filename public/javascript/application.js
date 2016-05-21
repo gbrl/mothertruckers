@@ -1,5 +1,40 @@
 $(document).ready(function() {
 
+
+  // FAVOURITES 
+
+  $(".heart").hover(function(){
+      $(this).attr("src", function(index, attr){
+        return attr.replace(".png", "_red.png");
+      });
+    }, function(){
+      $(this).attr("src", function(index, attr){
+          return attr.replace("_red.png", ".png");
+      });
+  });
+
+
+  $(".heart-live-anchor").on("click", function(e){
+
+    e.preventDefault();
+
+    $(this).children(".heart").attr("src", function(index, attr){
+        return attr.replace(".png", "_red.png");
+    });
+
+    $(this).children(".hearted").attr("src", function(index, attr){
+        return attr.replace("_red.png", ".png");
+    });
+
+    // Get some values from elements on the page:
+    var user_id  = $(this).attr("userid");
+    var truck_id  = $(this).attr("truckid");
+    var form_url  = "/users/" + user_id + "/favourites/" + truck_id;
+
+    // Send the data using post
+    var posting = $.post( form_url, { user_id: user_id, truck_id: truck_id } );
+  });
+
   // RATINGS FORM
   $("#rateit-range-2").on("click", function(){
 
