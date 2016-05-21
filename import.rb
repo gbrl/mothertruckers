@@ -14,6 +14,7 @@ require_relative 'app/models/favourite'
 
 def process_file
 
+  puts "Connecting to API..."
   AppConfig.establish_connection
 
   uri = URI("http://foodtruckreporter.com/api/food-trucks/trucks?access_token=566f92c903d8405f82490fcbdfad62b3&format=json&limit=1000&city=4")
@@ -25,6 +26,7 @@ end
 
 def parse(hash)
 
+  puts "Creating database entries..."
   trucks = hash['objects']
 
   trucks.each do |e| 
@@ -53,6 +55,7 @@ def parse(hash)
     end
   end
 
+puts "Creating users..."
 User.create(email: "taco@lover.com", password: "hungry")
 User.create(email: "burger@lover.com", password: "hungry")
 User.create(email: "poutine@lover.com", password: "hungry")
@@ -61,6 +64,7 @@ User.create(email: "food@lover.com", password: "hungry")
 
 # Create favourites for taco@lover.com
 # These trucks all serve tacos
+puts "Creating favourites..."
 Favourite.create(user_id: 1, truck_id: 30)
 Favourite.create(user_id: 1, truck_id: 26)
 Favourite.create(user_id: 1, truck_id: 18)
@@ -73,6 +77,7 @@ Favourite.create(user_id: 1, truck_id: 91)
 Favourite.create(user_id: 1, truck_id: 50)
 
 
+puts "Creating notes..."
 Note.create(user_id: 1, truck_id: 30, content: "So spicy, don't add any hot sauce!")
 Note.create(user_id: 1, truck_id: 26, content: "Arctic Char tacos?! Yes please!")
 Note.create(user_id: 1, truck_id: 18, content: "Super cute staff here and they have tequila. Shhhhh.....")

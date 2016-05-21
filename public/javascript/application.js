@@ -1,5 +1,39 @@
 $(document).ready(function() {
 
+  // SEARCH 
+
+    $("#searchbar-input").keypress(function (e) {
+    if (e.which == 13) {
+      e.preventDefault();
+      var search_query = $(this).val();
+      search_query = search_query.replace("?","");
+      base_url = "http://localhost:3000/trucks?"
+      search_url = base_url + search_query
+      window.location = search_url ;
+    }
+  });
+
+
+    $('#searchbar').on('submit', function(e) {
+      e.preventDefault();
+    });
+
+    $('#searchbar input').on('keyup', _.debounce(filterTrucks, 110));
+
+    function filterTrucks(){
+       var valThis = $(this).val();
+       $("#all-trucks .truck-box").each(function(){
+             var text = $(this).text().toLowerCase().trim();
+             if (text.indexOf(valThis) >= 0) {
+               $(this).show();
+               $grid.masonry('layout');
+             } else {
+               $(this).hide();
+               $grid.masonry('layout');
+             }
+        });
+    }
+
 
   // FAVOURITES 
 
@@ -35,7 +69,9 @@ $(document).ready(function() {
     var posting = $.post( form_url, { user_id: user_id, truck_id: truck_id } );
   });
 
+
   // RATINGS FORM
+
   $("#rateit-range-2").on("click", function(){
 
     // Get some values from elements on the page:
@@ -50,6 +86,7 @@ $(document).ready(function() {
   });
 
   // LAUNCH MASONRY
+
   $grid = $('#all-trucks');
   $grid.masonry({
   // options
@@ -58,27 +95,22 @@ $(document).ready(function() {
   });
   $grid.imagesLoaded().progress( function() {
     $grid.masonry('layout');
-  });
 
-  // SETUP SEARCH BEHAVIOUR
-  $('#searchbar').on('submit', function(e) {
-    e.preventDefault();
-  });
-
-  $('#searchbar input').on('keyup', _.debounce(filterTrucks, 110));
-
-  function filterTrucks(){
-     var valThis = $(this).val();
-     $("#all-trucks .truck-box").each(function(){
-           var text = $(this).text().toLowerCase().trim();
-           if (text.indexOf(valThis) >= 0) {
+    var search_query = location.search;
+    search_query = search_query.replace("?","");
+    if (search_query.length > 0) {
+      $("#all-trucks .truck-box").each(function(){
+          var text = $(this).text().toLowerCase().trim();
+           if (text.indexOf(search_query) >= 0) {
              $(this).show();
              $grid.masonry('layout');
            } else {
              $(this).hide();
              $grid.masonry('layout');
            }
-      });
-  }
+        });
+    }
+
+  });
 
 });
