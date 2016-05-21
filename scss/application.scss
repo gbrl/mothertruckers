@@ -67,7 +67,10 @@ body {
         border-top: 5px solid #eee;
         margin-top: 20px;
 
-        td {padding: 20px 0 0 0 !important}
+        td {
+          padding: 20px 0 0 0 !important;
+          vertical-align: top;
+        }
       }
     }
 
