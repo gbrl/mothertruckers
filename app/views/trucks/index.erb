@@ -1,7 +1,6 @@
+<h2>All Trucks</h2>
+<div id="all-trucks">
 <% @trucks.each do |t| %>
-  <div>
-    <strong><%= t.name %></strong>
-    <p><%= t.description %></p>
-    <img src="<%= t.image_small %>" />
-  </div>
+  <%= erb :'trucks/_truck', locals: {t: t}   %>
 <% end %>
+</div>

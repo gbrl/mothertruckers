@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/stylesheets/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/stylesheets/application.css">
+  <head>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+    <link href="https://rawgit.com/gjunge/rateit.js/master/scripts/rateit.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
 
-  <title></title>
-</head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+    <script src="/javascript/masonry.pkgd.min.js"></script>
+    <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
+    <script src="//cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
+    <script src="/javascript/application.js"></script>
+
+    <title>Mother Truckers</title>
+  </head>
 <body>
+<header>
+<div id="logo">
+<a href="/"><img src="/images/logo.png" width=200 height=58/></a>
+</div>
+  <nav>
+    <ul>
+      <li><a href="/">Trucks Near You</a></li>
+      <li><a href="/trucks">All Trucks</a></li>
+      <% if current_user %>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+      <% else %>
+      <li><a href="/login">Login/Register</a></li>
+      <% end %>
+      <%= erb :'_searchbar' %>
+    </ul>
+  </nav>
+</header>
+<section id="main-content">
   <%= yield %>
+</section>
 </body>
 </html>
-
