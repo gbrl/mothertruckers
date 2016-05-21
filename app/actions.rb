@@ -58,14 +58,21 @@ post '/users/login' do
   end
 end
 
-post 'users/register' do
+post '/users/register' do
   @user = User.find_by_email(params[:email])
   if @user
-    @error = "Email already exists"
-    erb :index
+    @email = params[:email]
+    @error = "Oops! There was something wrong with your email or password."
+    erb :'users/index'
   else
     @user = User.create(email: params[:email], password: params[:password])
-    redirect '/'
+    if (@user.save)
+      redirect '/'
+    else
+      @email = params[:email]
+      @error = "Oops! There was something wrong with your email or password."
+      erb :'users/index'
+    end
   end
 end
 
