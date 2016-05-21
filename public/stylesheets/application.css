@@ -37,7 +37,7 @@ body {
     max-width: 100% !important; }
   body form {
     max-width: 460px;
-    margin-top: 50px; }
+    margin-top: 10px; }
   body #main-content {
     display: block;
     padding-bottom: 50px;
@@ -77,6 +77,8 @@ body {
         position: relative;
         top: -8px;
         margin-right: 10px; }
+  body #ratings-form {
+    margin-top: 50px; }
   body div.stop-info {
     max-width: 300px;
     float: left;

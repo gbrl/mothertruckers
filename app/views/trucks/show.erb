@@ -32,7 +32,6 @@
   <h5>Write a personal note!</h5>
   <% if current_user %>
   <form method="post" action="/notes">
-    <label>Content:</label>
     <input type="text" name="content" placeholder="Everyone's a critic!">
     <input type="hidden" name="truck_id" value="<%= @truck.id %>">
     <input type="hidden" name="user_id" value="<%= current_user.id %>">
