@@ -1,16 +1,15 @@
 <% if @error %>
-  <div class="error">
+  <div class="callout small warning">
     <%= @error %>
   </div>
 <% end %>
-
 <table>
   <tr>
     <td>
       <h3>Log In</h3>
       <form action="/users/login" method="POST">
         <label>email</label>
-        <input name="email" type="text"/>
+        <input name="email" type="text" value="<%=@email%>"/>
         <label>password</label>
         <input name="password" type="password"/>
         <input type="submit" value="Log In"/>
@@ -20,12 +19,11 @@
       <h3>Register</h3>
       <form action="/users/register" method="POST">
         <label>email</label>
-        <input name="email" type="text"/>
+        <input name="email" type="text" value="<%=@email%>"/>
         <label>password</label>
         <input name="password" type="password"/>
         <input type="submit" value="Register"/>
       </form>
-    </td> 
+    </td>
   </tr>
 </table>
-
