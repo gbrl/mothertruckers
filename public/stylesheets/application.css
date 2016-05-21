@@ -122,7 +122,10 @@ body {
   body #map {
     width: 100%;
     height: 400px;
-    background-color: #B3D1FF; }
+    background-color: #B3D1FF;
+    background-image: url("/images/giphy.gif");
+    background-size: cover;
+    webkit-background-origin: border; }
   body div.stop-info {
     width: 230px;
     min-height: 330px;
