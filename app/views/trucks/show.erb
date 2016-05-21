@@ -34,7 +34,7 @@
 <hr />
 <% @truck.notes.where(user_id: current_user.id).each do |n| %>
   <div class="note">
-  <strong>Your Notes</strong><br /> "<%= n.content %>"
+  <strong>Your Notes</strong> "<%= n.content %>"
   </div>
 <% end %>
 </section>

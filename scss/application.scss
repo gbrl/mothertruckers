@@ -95,7 +95,7 @@ body {
       td{
         width: 50%;
         vertical-align: top;
-        padding: 10px 30px 0 0 !important;
+        padding: 20px 30px 0 0 !important;
       }
 
     }
@@ -137,7 +137,12 @@ body {
       }
     }
 
-    .truck-notes {margin-bottom: 30px}
+    .truck-notes {
+      margin-bottom: 30px;
+
+      strong {display: block;
+        margin: 20px 0 20px 0}
+    }
 
 
     #stars-input  {

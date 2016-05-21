@@ -69,7 +69,7 @@ body {
     body #main-content #show-truck td {
       width: 50%;
       vertical-align: top;
-      padding: 10px 30px 0 0 !important; }
+      padding: 20px 30px 0 0 !important; }
     body #main-content #all-trucks {
       padding-top: 10px; }
       body #main-content #all-trucks .open-truck {
@@ -97,6 +97,9 @@ body {
           color: #c51820 !important; }
     body #main-content .truck-notes {
       margin-bottom: 30px; }
+      body #main-content .truck-notes strong {
+        display: block;
+        margin: 20px 0 20px 0; }
     body #main-content #stars-input {
       margin-top: -38px; }
       body #main-content #stars-input strong {
