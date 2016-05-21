@@ -56,6 +56,35 @@ User.create(email: "burger@lover.com", password: "hungry")
 User.create(email: "poutine@lover.com", password: "hungry")
 User.create(email: "food@lover.com", password: "hungry")
 
+
+# Create favourites for taco@lover.com
+# These trucks all serve tacos
+Favourite.create(user_id: 1, truck_id: 30)
+Favourite.create(user_id: 1, truck_id: 26)
+Favourite.create(user_id: 1, truck_id: 18)
+Favourite.create(user_id: 1, truck_id: 4)
+Favourite.create(user_id: 1, truck_id: 36)
+Favourite.create(user_id: 1, truck_id: 69)
+Favourite.create(user_id: 1, truck_id: 68)
+Favourite.create(user_id: 1, truck_id: 89)
+Favourite.create(user_id: 1, truck_id: 91)
+Favourite.create(user_id: 1, truck_id: 50)
+
+
+Note.create(user_id: 1, truck_id: 30, content: "So spicy, don't add any hot sauce!")
+Note.create(user_id: 1, truck_id: 26, content: "Arctic Char tacos?! Yes please!")
+Note.create(user_id: 1, truck_id: 18, content: "Super cute staff here and they have tequila. Shhhhh.....")
+Note.create(user_id: 1, truck_id: 4, content: "Out-of-this-world pork tacos. Mango avocado salsa was so good I need to steal the recipe.")
+Note.create(user_id: 1, truck_id: 36, content: "Sweet old lady who always gives me a free churro!")
+Note.create(user_id: 1, truck_id: 69, content: "So much cheesey goodness, must stalk this one more.")
+Note.create(user_id: 1, truck_id: 68, content: "I would marry this truck if it were legal.")
+Note.create(user_id: 1, truck_id: 89, content: "A+ 100 PERCENT authentic mexican style tacos!")
+Note.create(user_id: 1, truck_id: 91, content: "Guy is super rude, but he makes a mean taco... Kinda torn...")
+Note.create(user_id: 1, truck_id: 50, content: "Cheap and delicious. They need to open a brick-and-mortar location.")
+
+
+
+
 end
 
 process_file
