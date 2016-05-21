@@ -1,8 +1,4 @@
-class CreateFavourite < ActiveRecord::Migration
-  def change
-    create_table :favourites do |t|
-      t.integer :user_id
-      t.integer :truck_id
-    end
-  end
+class Favourite < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :truck
 end

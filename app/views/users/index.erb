@@ -1,0 +1,31 @@
+<% if @error %>
+  <div class="error">
+    <%= @error %>
+  </div>
+<% end %>
+
+<table>
+  <tr>
+    <td>
+      <h3>Log In</h3>
+      <form action="/users/login" method="POST">
+        <label>email</label>
+        <input name="email" type="text"/>
+        <label>password</label>
+        <input name="password" type="password"/>
+        <input type="submit" value="Log In"/>
+      </form>
+    </td>
+    <td>
+      <h3>Register</h3>
+      <form action="/users/register" method="POST">
+        <label>email</label>
+        <input name="email" type="text"/>
+        <label>password</label>
+        <input name="password" type="password"/>
+        <input type="submit" value="Register"/>
+      </form>
+    </td> 
+  </tr>
+</table>
+
