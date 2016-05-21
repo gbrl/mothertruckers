@@ -7,7 +7,7 @@ body {
   color: #333;
   background-color: #eee; }
   body header {
-    max-width: 1200px;
+    max-width: 1240px;
     background-color: white;
     padding: 20px 20px 0 20px; }
     body header nav {
@@ -47,7 +47,7 @@ body {
   body #main-content {
     padding: 0 20px 20px 20px;
     background-color: white;
-    max-width: 1200px;
+    max-width: 1240px;
     display: block;
     padding-bottom: 50px;
     margin-bottom: 25px;
