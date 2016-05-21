@@ -1,1 +1,19 @@
-show.erb
+<h3>Keep on truckin', <%= @user.email %>!</h3>
+<br />
+<h4>Your favourite trucks:</h4>
+<% @favourites.all %>
+<h4>Your personal notes:</h4>
+
+<% last_truck_id = nil %>
+<% @notes.order(:truck_id, created_at: :desc).each do |note| %>
+  <% if note.truck.id != last_truck_id %>
+  <h5><%= note.truck.name %></h5>
+  <% end %>
+
+  <p>
+  <small><%=note.created_at%></small><br />
+  <%= note.content %>
+  </p>
+
+  <% last_truck_id = note.truck.id %>
+<% end %>

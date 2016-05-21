@@ -9,6 +9,7 @@ end
 
 
 get '/profile' do
+  @user = current_user if current_user
   @notes = current_user.notes if current_user
   @favourites = current_user.favourites if current_user
   erb :'users/show'
@@ -37,7 +38,6 @@ end
 
 # USERS
 get '/login' do
-  @users = User.all
   erb :'users/index'
 end
 
@@ -52,19 +52,27 @@ post '/users/login' do
     session[:id] = @user.id
     redirect '/'
   else
-    @error = "Wrong email or password"
-    redirect back
+    @email = params[:email]
+    @error = "Oops! There was something wrong with your email or password."
+    erb :'users/index'
   end
 end
 
-post 'users/register' do
+post '/users/register' do
   @user = User.find_by_email(params[:email])
   if @user
-    @error = "Email already exists"
-    erb :index
+    @email = params[:email]
+    @error = "Oops! There was something wrong with your email or password."
+    erb :'users/index'
   else
     @user = User.create(email: params[:email], password: params[:password])
-    redirect '/'
+    if (@user.save)
+      redirect '/'
+    else
+      @email = params[:email]
+      @error = "Oops! There was something wrong with your email or password."
+      erb :'users/index'
+    end
   end
 end
 
