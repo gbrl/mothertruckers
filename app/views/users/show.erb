@@ -1,1 +1,8 @@
 <h3>Keep on truckin', <%= @user.email %>!</h3>
+</br>
+<p>Your favourite trucks:</p>
+<% @favourites.all %>
+<p>Your personal notes:</p>
+<% @notes.each do |note| %>
+<%= note.content %>
+<% end %>
