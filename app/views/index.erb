@@ -1,6 +1,24 @@
    <div id="map"></div>
     <script>
 
+
+        function showMap() {
+
+          // Trying to load the map starting at Lighthouse Labs loacation, then doing geolocation, then adding pins.... Doesn't seem to be helping... so I'm commenting this out.
+
+          // var mapDiv = document.getElementById('map');
+          // var map = new google.maps.Map(mapDiv, {
+          //   center: {
+          //       lat: 43.644645,
+          //       lng: -79.394999
+          //   },
+          //   zoom: 13
+          // });
+
+          getLocation();
+        }
+
+
         function getLocation() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -12,6 +30,7 @@
                 buildMap(pos);
             });
           }
+
         }
 
         function buildMap(pos){
@@ -73,10 +92,22 @@
                   title: truck[0],
                   zIndex: truck[3]
               });
+
+              // Create the info window
+              var infowindow = new google.maps.InfoWindow({
+                content: "<strong>"+truck[0]+"</strong>"
+              });
+
+              // Add event listener for click
+              google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+              });
             }
+
+
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=getLocation" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6HG1oUyhnLkfe3sAIXX96gJGggtGK-qA&callback=showMap" async defer></script>
 
     <div id="front-page-stops" class="clearfix">
     <% @stops.each do |stop| %>
