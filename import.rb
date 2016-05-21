@@ -9,6 +9,8 @@ require_relative 'app_config'
 require_relative 'app/models/truck'
 require_relative 'app/models/stop'
 require_relative 'app/models/user'
+require_relative 'app/models/note'
+require_relative 'app/models/favourite'
 
 def process_file
 
