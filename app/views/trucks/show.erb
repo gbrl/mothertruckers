@@ -37,5 +37,45 @@
   </form>
   <% else %>
   <p>You must be <a href="/login">logged in</a> to leave a note.</p>
-  <% end %>
-</section>
+  <% end %> 
+  </section> 
+
+<% if @truck.open? %>
+  <p><strong><font color="green"> OPEN NOW </font></strong><font color="grey"> until </font><%= @truck.stops.last.to.strftime("%I:%M %p") %></p>
+
+  <div id="map"></div>
+  
+<% else %>
+  <p><strong><font color="c51820"> CLOSED </strong></p>
+<% end %>
+
+
+<script>
+
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 43.652644, lng: -79.381769},
+      zoom: 8
+    });
+
+    var LatLng = {
+      'lat': <%=@lat %>, 
+      'lng': <%=@long %>
+    };
+
+    var marker = new google.maps.Marker({
+      position: LatLng
+    });
+    marker.setMap(map);
+  }
+
+  function getLocation() {
+    initMap();
+  }
+
+  </script>
+
+
+
+
