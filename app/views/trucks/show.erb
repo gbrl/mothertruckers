@@ -1,8 +1,7 @@
-<h1><%= @truck.name %><% if @truck.open? %>
+<h2><%= @truck.name %><% if @truck.open? %>
 <a href="https://maps.google.com?saddr=Current+Location&daddr=
 <%= @truck.escaped_current_stop_lat_lng %>" class="small button" target="_blank"/>GET DIRECTIONS &rarr;</a>
-<% end %></h1>
-
+<% end %></h2>
 <table id="show-truck">
 <tr>
 <td width="50%">
@@ -24,14 +23,15 @@
 <% if @truck.open? %>
 <p><strong class="open-message">This truck is currently open at <%= @truck.current_stop.name + "!" %></strong></p>
 <% end %>
+<p><%= @truck.description %></p>
 <% if @truck.cuisine.to_s.length > 1 %>
 <p>Cuisine: <%= @truck.cuisine %></p>
 <% end %>
-<p><%= @truck.description %></p>
 <p>Visit <a href="<%= @truck.website %>"><%= @truck.name %>'s website</a></p>
 
 <% if current_user %>
 <section class="truck-notes">
+<hr />
 <% @truck.notes.where(user_id: current_user.id).each do |n| %>
   <div class="note">
   <strong>Your Notes</strong><br /> "<%= n.content %>"
@@ -41,7 +41,7 @@
 <% end %>
 <% if current_user && @truck.notes.where(user_id: current_user.id).length == 0 %>
 <section class="note-form">
-  <h5>Write a personal note!</h5>
+  <h5>Write a personal note</h5>
   <% if current_user %>
   <form method="post" action="/notes">
     <input type="text" name="content" placeholder="Everyone's a critic!">
@@ -56,16 +56,12 @@
 <% end %>
 </td></tr>
 </table>
-
 <% if @truck.open? %>
-  <p><strong><font color="green"> OPEN NOW </font></strong><font color="grey"> until </font><%= @truck.stops.last.to.strftime("%I:%M %p") %></p>
-
+  <strong><font color="green"> OPEN NOW </font></strong><font color="grey"> until </font><%= @truck.stops.last.to.strftime("%I:%M %p") %>
   <div id="map"></div>
-  
 <% else %>
-  <p><strong><font color="c51820"> CLOSED </strong></p>
+  <strong><font color="c51820"> CLOSED </strong>
 <% end %>
-
 <% if @truck.open? %>
 <script>
   var map;

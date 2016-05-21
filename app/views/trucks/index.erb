@@ -1,7 +1,0 @@
-<h2>All Trucks</h2>
-<h4>Open trucks are highlighted in red. Click here for<a href="/open-trucks"> open trucks.</a></h4>
-<div id="all-trucks">
-<% @trucks.each do |t| %>
-  <%= erb :'trucks/_truck', locals: {t: t}   %>
-<% end %>
-</div>
