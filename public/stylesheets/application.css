@@ -84,7 +84,7 @@ body {
     float: left;
     height: 200px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     border: 1px solid #eee; }
   body #map {
     width: 100%;
@@ -116,5 +116,25 @@ body {
     *background: url(star-preset.svg);
     /* For IE 6 and 7 */
     background-size: contain; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
 
 /*# sourceMappingURL=application.css.map */
