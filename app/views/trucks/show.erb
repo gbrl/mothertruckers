@@ -1,4 +1,8 @@
-<h1><%= @truck.name %></h1>
+<h1><%= @truck.name %><% if @truck.open? %>
+<a href="https://maps.google.com?saddr=Current+Location&daddr=
+<%= @truck.escaped_current_stop_lat_lng %>" class="small button" target="_blank"/>GET DIRECTIONS &rarr;</a>
+<% end %></h1>
+
 <img src="<%= @truck.image_large %>" />
 <form method="post" action="/ratings" id="ratings-form">
     <div id="stars-input">
@@ -12,6 +16,10 @@
     <br />
     <input type="submit" value="Submit" class="hidden">
 </form>
+
+<% if @truck.open? %>
+<p><strong class="open-message">This truck is currently open at <%= @truck.current_stop.name + "!" %></strong></p>
+<% end %>
 <% if @truck.cuisine.to_s.length > 1 %>
 <p>Cuisine: <%= @truck.cuisine %></p>
 <% end %>

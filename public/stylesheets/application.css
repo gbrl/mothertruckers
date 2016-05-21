@@ -43,6 +43,11 @@ body {
     padding-bottom: 50px;
     margin-bottom: 25px;
     border-bottom: 5px solid #eee; }
+    body #main-content strong.open-message {
+      color: #c51820; }
+    body #main-content h1 a.button {
+      position: relative;
+      top: 5px; }
     body #main-content #profile-table {
       margin-top: 20px;
       border: none !important; }
@@ -54,9 +59,9 @@ body {
           vertical-align: top; }
     body #main-content #all-trucks .open-truck {
       background-color: #c51820 !important; }
-      body #main-content #all-trucks .open-truck h5 a, body #main-content #all-trucks .open-truck a.website-link, body #main-content #all-trucks .open-truck p {
+      body #main-content #all-trucks .open-truck h5 a, body #main-content #all-trucks .open-truck a.website-link {
         color: white !important; }
-      body #main-content #all-trucks .open-truck em {
+      body #main-content #all-trucks .open-truck p, body #main-content #all-trucks .open-truck em {
         color: black !important; }
     body #main-content #all-trucks .truck-box {
       padding: 20px;
@@ -96,8 +101,6 @@ body {
     width: 100%;
     height: 400px;
     background-color: #B3D1FF; }
-  body .hidden {
-    display: none; }
   body table tbody {
     border: none !important; }
   body div.svg {
@@ -122,6 +125,10 @@ body {
     *background: url(star-preset.svg);
     /* For IE 6 and 7 */
     background-size: contain; }
+
+/* HELPER CSS */
+.hidden {
+  display: none; }
 
 .clearfix:after {
   visibility: hidden;

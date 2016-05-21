@@ -59,6 +59,13 @@ body {
     margin-bottom: 25px;
     border-bottom: 5px solid #eee;
 
+  strong.open-message {color: #c51820; }
+
+    h1 a.button {
+      position: relative;
+      top: 5px;
+    }
+
     #profile-table {
       margin-top: 20px;
       border: none !important;
@@ -78,8 +85,8 @@ body {
 
       .open-truck {background-color: #c51820 !important;
 
-        h5 a, a.website-link, p {color: white !important;}
-        em {color: black !important}
+        h5 a, a.website-link {color: white !important;}
+        p, em {color: black !important}
 
       }
 
@@ -141,7 +148,7 @@ body {
     background-color: #B3D1FF;
   }
 
-  .hidden {display: none}
+
 
   table tbody {  border: none !important; }
 
@@ -172,18 +179,24 @@ body {
   }
 }
 
+/* HELPER CSS */
+
+.hidden {display: none}
 
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
+
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
+
 * html .clearfix { height: 1%; }
+
 .clearfix { display: block; }
 /* close commented backslash hack */
 
