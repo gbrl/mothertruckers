@@ -54,7 +54,7 @@ body {
     border-bottom: 5px solid #eee; }
     body #main-content strong.open-message {
       color: green; }
-    body #main-content h1 a.button {
+    body #main-content h2 a.button {
       position: relative;
       top: 5px; }
     body #main-content #profile-table {
