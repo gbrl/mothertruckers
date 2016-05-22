@@ -22,10 +22,20 @@ get '/' do
 end
 
 # TRUCKS
+
+
 get '/trucks' do
   @trucks = Truck.all
   erb :'/trucks/index-all'
 end
+
+
+get '/search?:query' do
+  query = params.keys[0]
+  @trucks = Truck.where("name LIKE ? OR description LIKE ?", "%#{query.to_s}%","%#{query.to_s}%")
+  erb :'/trucks/index-all'
+end
+
 
 get '/open-trucks' do
   @trucks = Truck.open
