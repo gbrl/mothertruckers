@@ -3,7 +3,7 @@
   font-weight: light; }
 
 body {
-  padding: 0 2% 2% 2%;
+  padding: 0 2% 0 2%;
   color: #333;
   background-color: #eee; }
   body header {
@@ -62,7 +62,6 @@ body {
     max-width: 1243px;
     display: block;
     padding-bottom: 50px;
-    margin-bottom: 25px;
     border-bottom: 5px solid #eee; }
     body #main-content strong.open-message {
       color: green; }
