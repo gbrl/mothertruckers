@@ -1,5 +1,5 @@
 <% if current_user %>
-  <h4 id="map-notifications">Hi, <strong><%= @user.email %></strong>. Finding food trucks near you...</h4>
+  <h4 id="map-notifications">Hi, <strong><%= @user.email %></strong>. Finding food trucks...</h4>
 <% else %>
   <h4>Check out these food trucks near you:</h4>
 <% end %>
@@ -7,34 +7,21 @@
     <script>
         function showMap() {
 
-          // Trying to load the map starting at Lighthouse Labs loacation, then doing geolocation, then adding pins.... Doesn't seem to be helping... so I'm commenting this out.
-
-          // var mapDiv = document.getElementById('map');
-          // var map = new google.maps.Map(mapDiv, {
-          //   center: {
-          //       lat: 43.644645,
-          //       lng: -79.394999
-          //   },
-          //   zoom: 13
-          // });
-
-
-
-          // var mapDiv = document.getElementById('map');
-          // var map = new google.maps.Map(mapDiv, {
-          //   center: {
-          //       lat: 43.644645,
-          //       lng: -79.394999
-          //   },
-          //   zoom: 13
-          // });
+          var mapDiv = document.getElementById('map');
+          var map = new google.maps.Map(mapDiv, {
+            center: {
+                lat: 43.644645,
+                lng: -79.394999
+            },
+            zoom: 11
+          });
 
           
-          getLocation();
+          getLocation(map);
         }
 
 
-        function getLocation() {
+        function getLocation(map) {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 pos = {
@@ -42,22 +29,16 @@
                     lng: position.coords.longitude
                 };
 
-                buildMap(pos);
+                map.setZoom(13);
+                buildMap(pos,map);
             });
           }
 
         }
 
-        function buildMap(pos){
+        function buildMap(pos,map){
 
           var mapDiv = document.getElementById('map');
-          var map = new google.maps.Map(mapDiv, {
-            center: {
-                lat: pos["lat"],
-                lng: pos["lng"]
-            },
-            zoom: 13
-          });
 
           var your_marker = new google.maps.Marker({
             position: pos,
@@ -70,7 +51,7 @@
           <%
           trucks = []
           @stops.each_with_index do |stop,index|
-            trucks << [stop.name,stop.latitude,stop.longitude,index,stop.truck.slug,stop.from.strftime("%l:%M %p"),stop.to.strftime("%l:%M %p"),stop.escaped_lat_lng]
+            trucks << [stop.name,stop.latitude,stop.longitude,index,stop.truck.slug,stop.from.strftime("%l:%M %p"),stop.to.strftime("%l:%M %p"),stop.escaped_lat_lng,stop.truck.name]
           end
           %>
 
@@ -111,7 +92,7 @@
 
              // Create the info window
              var infowindow = new google.maps.InfoWindow({
-               content: "<strong><a href='http://localhost:3000/trucks/"+truck[4]+"'>"+truck[0]+"</a></strong><br />"+truck[5]+" to "+truck[6]+"<br /><a href='https://maps.google.com?saddr=Current+Location&daddr="+truck[7]+"' target='_blank'/>GET DIRECTIONS  &rarr;</a>"
+               content: "<strong><a href='http://localhost:3000/trucks/"+truck[4]+"'>"+truck[8]+"</a></strong><br />"+truck[0]+"<br />"+truck[5]+" to "+truck[6]+"<br /><a href='https://maps.google.com?saddr=Current+Location&daddr="+truck[7]+"' target='_blank'/>GET DIRECTIONS  &rarr;</a>"
              });
 
              // Add event listener for click
