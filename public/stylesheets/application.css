@@ -145,7 +145,7 @@ body {
     webkit-background-origin: border; }
   body div.stop-info {
     width: 230px;
-    min-height: 330px;
+    min-height: 350px;
     margin-right: 10px; }
     body div.stop-info img {
       margin-bottom: 10px; }
@@ -153,7 +153,9 @@ body {
       color: white !important;
       width: 100%;
       position: relative;
-      top: 20px; }
+      top: 22px; }
+    body div.stop-info div.stop-info-text {
+      height: 270px; }
   body table tbody {
     border: none !important; }
   body div.svg {

@@ -210,7 +210,7 @@ body {
 
   div.stop-info {
     width: 230px;
-    min-height: 330px;
+    min-height: 350px;
     margin-right: 10px;
 
     img {margin-bottom: 10px;}
@@ -219,7 +219,12 @@ body {
       color: white !important;
       width: 100%;
       position: relative;
-      top: 20px;
+      top: 22px;
+    }
+
+
+    div.stop-info-text {
+      height: 270px;
     }
   }
 
