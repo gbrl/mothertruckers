@@ -1,4 +1,4 @@
-<h2>Open Trucks</h2>
+<h2>Today's Trucks</h2>
 <% unless @trucks.length == 0 %>
 <h4><a href="/trucks">See all trucks.</a></h4>
 <% end %>
@@ -7,6 +7,6 @@
   <%= erb :'trucks/_truck_open', locals: {t: t}   %>
 <% end %>
 <% if @trucks.length == 0 %>
-<h3>There are no food trucks currently open. <a href="/trucks">See all trucks.</a></h3>
+<h3>There are no food trucks operating today. <a href="/trucks">See all trucks.</a></h3>
 <% end %>
 </div>

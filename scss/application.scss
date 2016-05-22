@@ -142,22 +142,28 @@ body {
         width: 290px !important;
         margin: 5px 0 !important;
 
-      img.truck-small-image {
-        margin-bottom: 5px;
-      }
+        img.truck-small-image {
+          margin-bottom: 5px;
+        }
 
-      img.hearted, img.heart{
-        margin-top: -80px;
-        margin-left: 10px;
-      }
+        img.hearted, img.heart{
+          margin-top: -80px;
+          margin-left: 10px;
+        }
 
-      h5 {
-        margin: -15px 0 1px 0
-      }
 
-      a {color: #c51820 !important}
+        div.tuck-box-img-holder {
+          width: 250px; 
+          height: 180px;
+        }
+        
+        h5 {
+          margin: -15px 0 1px 0
+        }
 
-      }
+        a {color: #c51820 !important}
+
+        }
     }
 
     .truck-notes {
@@ -204,7 +210,7 @@ body {
 
   div.stop-info {
     width: 230px;
-    min-height: 330px;
+    min-height: 350px;
     margin-right: 10px;
 
     img {margin-bottom: 10px;}
@@ -213,7 +219,12 @@ body {
       color: white !important;
       width: 100%;
       position: relative;
-      top: 20px;
+      top: 22px;
+    }
+
+
+    div.stop-info-text {
+      height: 270px;
     }
   }
 

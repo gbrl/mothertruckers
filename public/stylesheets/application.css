@@ -106,6 +106,9 @@ body {
         body #main-content #all-trucks .truck-box img.hearted, body #main-content #all-trucks .truck-box img.heart {
           margin-top: -80px;
           margin-left: 10px; }
+        body #main-content #all-trucks .truck-box div.tuck-box-img-holder {
+          width: 250px;
+          height: 180px; }
         body #main-content #all-trucks .truck-box h5 {
           margin: -15px 0 1px 0; }
         body #main-content #all-trucks .truck-box a {
@@ -142,7 +145,7 @@ body {
     webkit-background-origin: border; }
   body div.stop-info {
     width: 230px;
-    min-height: 330px;
+    min-height: 350px;
     margin-right: 10px; }
     body div.stop-info img {
       margin-bottom: 10px; }
@@ -150,7 +153,9 @@ body {
       color: white !important;
       width: 100%;
       position: relative;
-      top: 20px; }
+      top: 22px; }
+    body div.stop-info div.stop-info-text {
+      height: 270px; }
   body table tbody {
     border: none !important; }
   body div.svg {

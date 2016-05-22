@@ -1,7 +1,9 @@
     <div class="stop-info clearfix">
-        <a href="/trucks/<%= stop.truck.slug %>"><img src="<%= stop.truck.image_small %>" width="290" height="210" class="truck-small-image"/></a><br />
-    <strong><a href="/trucks/<%= stop.truck.slug %>"><%= stop.truck.name %></a></strong><br />
-    <small><strong><%= stop.name %></strong></small><br />
-    <small><%= stop.from.strftime("%l:%M %p") %> to <%= stop.to.strftime("%l:%M %p") %></small>
+    <div class="stop-info-text">
+      <a href="/trucks/<%= stop.truck.slug %>"><img src="<%= stop.truck.image_small %>" width="290" height="210" class="truck-small-image"/></a><br />
+      <strong><a href="/trucks/<%= stop.truck.slug %>"><%= stop.truck.name %></a></strong><br />
+      <small><strong><%= stop.name %></strong></small><br />
+      <small><%= stop.from.strftime("%l:%M %p") %> to <%= stop.to.strftime("%l:%M %p") %></small>
+    </div>
     <a href="https://maps.google.com?saddr=Current+Location&daddr=<%= stop.escaped_lat_lng %>" class="small button" target="_blank"/>GET DIRECTIONS &nbsp; &rarr;</a>
     </div>
