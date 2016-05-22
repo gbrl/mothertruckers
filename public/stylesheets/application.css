@@ -16,11 +16,11 @@ body {
       background-color: #c51820;
       border-radius: 0 0 25px 25px;
       display: block;
-      width: 730px;
+      width: 727px;
       height: 70px;
-      margin-top: -80px;
+      margin-top: -93px;
       padding-right: 30px;
-      padding-top: 25px; }
+      padding-top: 30px; }
       body header nav ul {
         float: right; }
         body header nav ul li:last-child {
@@ -30,7 +30,11 @@ body {
           list-style: none;
           margin-right: 30px; }
           body header nav ul li a {
-            color: white; }
+            color: white;
+            padding-bottom: 3px; }
+          body header nav ul li a:hover {
+            border-bottom: 1px solid white;
+            color: white !important; }
           body header nav ul li form {
             display: inline;
             margin-top: 0;
