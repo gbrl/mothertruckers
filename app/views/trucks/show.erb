@@ -27,7 +27,7 @@
 <% if @truck.cuisine.to_s.length > 1 %>
 <p>Cuisine: <%= @truck.cuisine %></p>
 <% end %>
-<p>Visit <a href="<%= @truck.website %>"><%= @truck.name %>'s website</a></p>
+<p>Visit <a href="<%= @truck.website %>" target="_blank"><%= @truck.name %>'s website</a></p>
 
 <% if current_user %>
 <section class="truck-notes">
