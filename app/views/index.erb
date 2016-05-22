@@ -1,4 +1,8 @@
-<h3>Food Trucks Near You...</h3>
+<% if current_user %>
+  <h4>Welcome back, <%= @user.email %>. Check out these food trucks near you:</h4>
+<% else %>
+  <h4>Check out these food trucks near you:</h4>
+<% end %>
    <div id="map"></div>
     <script>
         function showMap() {
@@ -51,18 +55,18 @@
           // To add the marker to the map, call setMap();
           your_marker.setMap(map);
 
-          <% 
+          <%
           trucks = []
-          @stops.each_with_index do |stop,index| 
+          @stops.each_with_index do |stop,index|
             trucks << [stop.name,stop.latitude,stop.longitude,index]
-          end 
+          end
           %>
 
           var trucks = <%= pp trucks %>;
 
           var image = {
               url: 'http://localhost:3000/images/truck.png',
-            
+
               size: new google.maps.Size(30, 20),
               // The origin for this image is (0, 0).
               origin: new google.maps.Point(0, 0),
@@ -108,7 +112,7 @@
 
         }
     </script>
-    
+
     <div id="front-page-stops" class="clearfix">
     <% @stops.each do |stop| %>
       <%= erb :'_stop', locals: {stop: stop}   %>
