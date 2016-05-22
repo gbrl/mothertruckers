@@ -31,8 +31,8 @@ end
 
 
 get '/search?:query' do
-  query = params.keys[0]
-  @trucks = Truck.where("name LIKE ? OR description LIKE ? OR cuisine LIKE ?", "%#{query.to_s}%","%#{query.to_s}%","%#{query.to_s}%")
+  @query = params.keys[0]
+  @trucks = Truck.where("name LIKE ? OR description LIKE ? OR cuisine LIKE ?", "%#{@query.to_s}%","%#{@query.to_s}%","%#{@query.to_s}%")
   erb :'/trucks/index-all'
 end
 
