@@ -1,5 +1,5 @@
 <% if current_user %>
-  <h4>Welcome back, <strong><%= @user.email %></strong>. Check out these food trucks near you:</h4>
+  <h4 id="map-notifications">Hi, <strong><%= @user.email %></strong>. Finding food trucks near you...</h4>
 <% else %>
   <h4>Check out these food trucks near you:</h4>
 <% end %>
@@ -63,6 +63,7 @@
           %>
 
           var trucks = <%= pp trucks %>;
+          var num_trucks = trucks.length;
 
           var image = {
               url: 'http://localhost:3000/images/truck.png',
@@ -109,6 +110,15 @@
               });
             }
 
+            if (num_trucks == 0) {
+              $("#map-notifications").text("There are no food trucks operating today. :(");
+            }
+            if (num_trucks == 1) {
+              $("#map-notifications").text("Found one food truck.");
+            }
+            if (num_trucks > 1) {
+              $("#map-notifications").text("We found " + num_trucks + " food trucks!");
+            }
 
         }
     </script>
