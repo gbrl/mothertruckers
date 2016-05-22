@@ -11,6 +11,7 @@ require_relative 'app/models/stop'
 require_relative 'app/models/user'
 require_relative 'app/models/note'
 require_relative 'app/models/favourite'
+require_relative 'app/models/rating'
 
 def process_file
 
@@ -89,7 +90,39 @@ Note.create(user_id: 1, truck_id: 89, content: "A+ 100 PERCENT authentic mexican
 Note.create(user_id: 1, truck_id: 91, content: "Guy is super rude, but he makes a mean taco... Kinda torn...")
 Note.create(user_id: 1, truck_id: 50, content: "Cheap and delicious. They need to open a brick-and-mortar location.")
 
+puts "Creating ratings...."
+Rating.create(user_id: 2, truck_id: 30, score: 2)
+Rating.create(user_id: 2, truck_id: 26, score: 2)
+Rating.create(user_id: 2, truck_id: 18, score: 2)
+Rating.create(user_id: 2, truck_id: 4, score: 2)
+Rating.create(user_id: 2, truck_id: 36, score: 3)
+Rating.create(user_id: 2, truck_id: 69, score: 2)
+Rating.create(user_id: 2, truck_id: 68, score: 2)
+Rating.create(user_id: 2, truck_id: 89, score: 5)
+Rating.create(user_id: 2, truck_id: 91, score: 5)
+Rating.create(user_id: 2, truck_id: 50, score: 5)
 
+Rating.create(user_id: 3, truck_id: 30, score: 2)
+Rating.create(user_id: 3, truck_id: 26, score: 1)
+Rating.create(user_id: 3, truck_id: 18, score: 1)
+Rating.create(user_id: 3, truck_id: 4, score: 5)
+Rating.create(user_id: 3, truck_id: 36, score: 5)
+Rating.create(user_id: 3, truck_id: 69, score: 3)
+Rating.create(user_id: 3, truck_id: 68, score: 2)
+Rating.create(user_id: 3, truck_id: 89, score: 1)
+Rating.create(user_id: 3, truck_id: 91, score: 2)
+Rating.create(user_id: 3, truck_id: 50, score: 2)
+
+Rating.create(user_id: 4, truck_id: 30, score: 2)
+Rating.create(user_id: 4, truck_id: 26, score: 2)
+Rating.create(user_id: 4, truck_id: 18, score: 5)
+Rating.create(user_id: 4, truck_id: 4, score: 1)
+Rating.create(user_id: 4, truck_id: 36, score: 2)
+Rating.create(user_id: 4, truck_id: 69, score: 3)
+Rating.create(user_id: 4, truck_id: 68, score: 5)
+Rating.create(user_id: 4, truck_id: 89, score: 3)
+Rating.create(user_id: 4, truck_id: 91, score: 2)
+Rating.create(user_id: 4, truck_id: 50, score: 2)
 
 
 end
