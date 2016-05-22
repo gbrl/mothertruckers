@@ -57,7 +57,7 @@
 </td></tr>
 </table>
 <% if @truck.open? %>
-  <strong><font color="green"> OPEN NOW </font></strong><font color="grey"> until </font><%= @truck.stops.last.to.strftime("%I:%M %p") %>
+  <strong><font color="green"> OPEN TODAY </font></strong><font color="grey"> from </font><%= @truck.current_stop.from.strftime("%I:%M %p") %><font color="grey"> to </font><%= @truck.stops.last.to.strftime("%I:%M %p") %>
   <div id="map"></div>
 <% else %>
   <strong><font color="c51820"> CLOSED </strong>
