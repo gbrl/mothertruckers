@@ -1,5 +1,5 @@
 <h2>All Trucks</h2>
-<h4>Open trucks are highlighted in red. <a href="/open-trucks">See open trucks.</a></h4>
+<h4>Today's trucks are highlighted in red. <a href="/open-trucks">See today's trucks.</a></h4>
 <div id="all-trucks">
 <% @trucks.each do |t| %>
   <%= erb :'trucks/_truck', locals: {t: t}   %>
