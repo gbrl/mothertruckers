@@ -146,6 +146,11 @@ body {
     margin-right: 10px; }
     body div.stop-info img {
       margin-bottom: 10px; }
+    body div.stop-info a.button {
+      color: white !important;
+      width: 100%;
+      position: relative;
+      top: 20px; }
   body table tbody {
     border: none !important; }
   body div.svg {

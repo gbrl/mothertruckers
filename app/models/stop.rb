@@ -12,5 +12,8 @@ class Stop < ActiveRecord::Base
     return open_stops
   end
 
+  def escaped_lat_lng
+    address = "#{latitude.to_s},#{longitude.to_s}"
+  end
 
 end
