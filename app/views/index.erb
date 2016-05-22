@@ -83,42 +83,43 @@
           };
 
           for (var i = 1; i < trucks.length; i++) {
-              var truck = trucks[i];
+           (function(truck) {
+             var marker = new google.maps.Marker({
+                 position: {
+                     lat: truck[1],
+                     lng: truck[2]
+                 },
+                 map: map,
+                 icon: image,
+                 shape: shape,
+                 title: truck[0],
+                 zIndex: truck[3]
+             });
 
-              var marker = new google.maps.Marker({
-                  position: {
-                      lat: truck[1],
-                      lng: truck[2]
-                  },
-                  map: map,
-                  icon: image,
-                  shape: shape,
-                  title: truck[0],
-                  zIndex: truck[3]
-              });
+             console.log(truck[0]);
 
-              console.log(truck[0]);
+             // Create the info window
+             var infowindow = new google.maps.InfoWindow({
+               content: "<strong style='padding-left: 3px; position:relative; top: 3px'>"+truck[0]+"</strong>"
+             });
 
-              // Create the info window
-              var infowindow = new google.maps.InfoWindow({
-                content: "<strong style='padding-left: 3px; position:relative; top: 3px'>"+truck[0]+"</strong>"
-              });
+             // Add event listener for click
+             google.maps.event.addListener(marker, 'click', function() {
+               infowindow.open(map,marker);
+             });
+           })(trucks[i]);
+          }
 
-              // Add event listener for click
-              google.maps.event.addListener(marker, 'click', function() {
-                infowindow.open(map,marker);
-              });
-            }
 
-            if (num_trucks == 0) {
-              $("#map-notifications").text("There are no food trucks operating today. :(");
-            }
-            if (num_trucks == 1) {
-              $("#map-notifications").text("Found one food truck.");
-            }
-            if (num_trucks > 1) {
-              $("#map-notifications").text("We found " + num_trucks + " food trucks!");
-            }
+          if (num_trucks == 0) {
+             $("#map-notifications").text("There are no food trucks operating today. :(");
+           }
+           if (num_trucks == 1) {
+             $("#map-notifications").text("Found one food truck.");
+           }
+           if (num_trucks > 1) {
+             $("#map-notifications").text("We found " + num_trucks + " food trucks!");
+           }
 
         }
     </script>

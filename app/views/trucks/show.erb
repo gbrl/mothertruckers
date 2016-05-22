@@ -21,7 +21,7 @@
 </td>
 <td width="50%">
 <% if @truck.open? %>
-<p><strong class="open-message">This truck is currently open at <%= @truck.current_stop.name + "!" %></strong></p>
+<p><strong class="open-message">This truck is open today at <%= @truck.current_stop.name + "!" %></strong></p>
 <% end %>
 <p><%= @truck.description %></p>
 <% if @truck.cuisine.to_s.length > 1 %>

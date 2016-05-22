@@ -7,7 +7,7 @@ class Truck < ActiveRecord::Base
   has_many :ratings
 
   def rating
-    rating = self.ratings.average(:score)
+    rating = self.ratings.average(:score).to_i
   end
 
   def current_stop
