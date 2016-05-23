@@ -12,6 +12,7 @@ gem 'pry'
 gem 'rspec'
 gem 'byebug'
 gem 'pg'
+gem 'bcrypt'
 
 
 group :development, :test do
