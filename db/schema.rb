@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20160523193823) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contacts", force: :cascade do |t|
-    t.string "name",            limit: 40, null: false
-    t.string "email",           limit: 40, null: false
-    t.string "phone_primary",   limit: 40, null: false
-    t.string "phone_secondary", limit: 40, null: false
-  end
-
   create_table "favourites", force: :cascade do |t|
     t.integer "truck_id"
     t.integer "user_id"
