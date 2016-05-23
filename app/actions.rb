@@ -68,8 +68,7 @@ get '/logout' do
 end
 
 post '/users/login' do
-  @user = User.find_by_email(params[:email])
-  if @user && (@user.authenticate(params[:password]))
+  if @user = User.find_by_email(params[:email]).try(:authenticate, params[:password])
     session[:id] = @user.id
     redirect '/'
   else
