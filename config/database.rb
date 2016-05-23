@@ -4,6 +4,8 @@ configure do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
 
+  require_relative '../app_config'
+
   AppConfig.establish_connection
 
   # Load all models from app/models, using autoload instead of require
