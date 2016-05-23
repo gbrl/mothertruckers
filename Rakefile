@@ -22,8 +22,8 @@ task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
 
-desc 'populate the test database with data'
-task 'db:populate' do
-  AppConfig.establish_connection
-  TrucksImporter.new.import
-end
+# desc 'populate the test database with data'
+# task 'db:populate' do
+#   AppConfig.establish_connection
+#   TrucksImporter.new.import
+# end
