@@ -43,16 +43,16 @@ class Truck < ActiveRecord::Base
   def open?
     response = false
     stops = self.stops
-    puts stops.count
     stop_ids = []
     current_time = DateTime.now - (4/24.0)
+
     stops.each do |stop|
       if ((stop.from < current_time) && (stop.to > current_time))
         response = stop
       end
     end
+
     return response
-    
   end
   
   private
