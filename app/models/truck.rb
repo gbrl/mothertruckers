@@ -31,7 +31,7 @@ class Truck < ActiveRecord::Base
     trucks.each do |t|
       next if t.stops.count < 1
       t.stops.each do |stop|
-          if ((stop.from < Time.now) && (stop.to > Time.now))
+          if ((stop.from < DateTime.now.utc) && (stop.to > DateTime.now.utc))
             open_truck_ids << stop.truck_id
           end
       end
@@ -45,8 +45,8 @@ class Truck < ActiveRecord::Base
     stops = self.stops
     stop_ids = []
       stops.each do |stop|
-        if ((stop.from < Time.now) && (stop.to > Time.now))
-          response = stop
+        if ((stop.from < DateTime.now.utc) && (stop.to > DateTime.now.utc))
+          response = true
         end
       end
     return response

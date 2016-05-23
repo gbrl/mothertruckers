@@ -5,7 +5,9 @@ class Stop < ActiveRecord::Base
     open_stops = []
     stops = Stop.all
       stops.each do |stop|
-        if ((stop.from < Time.now) && (stop.to > Time.now))
+        if ((stop.from > DateTime.now.utc.beginning_of_day
+) && (stop.to < DateTime.now.utc.end_of_day
+))
           open_stops << stop
         end
       end

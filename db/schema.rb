@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521184527) do
+ActiveRecord::Schema.define(version: 20160523171309) do
 
   create_table "favourites", force: :cascade do |t|
     t.integer "truck_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20160521184527) do
     t.datetime "to"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "stops", ["truck_id"], name: "index_stops_on_truck_id"
