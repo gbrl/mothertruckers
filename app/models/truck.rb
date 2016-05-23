@@ -26,10 +26,12 @@ class Truck < ActiveRecord::Base
   def self.open
     open_truck_ids = []
     trucks = Truck.all
+    current_time = DateTime.now - (4/24.0)
+
     trucks.each do |t|
       next if t.stops.count < 1
       t.stops.each do |stop|
-          if ((stop.from < Time.now.utc) && (stop.to > Time.now.utc))
+          if ((stop.from < current_time) && (stop.to > current_time))
             open_truck_ids << stop.truck_id
           end
       end
