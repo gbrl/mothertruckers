@@ -11,6 +11,7 @@ gem 'tux'
 gem 'pry'
 gem 'rspec'
 gem 'byebug'
+gem 'pg'
 
 
 group :development, :test do

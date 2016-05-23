@@ -46,9 +46,12 @@ class Truck < ActiveRecord::Base
     stop_ids = []
       stops.each do |stop|
         if ((stop.from < DateTime.now.utc) && (stop.to > DateTime.now.utc))
-          response = true
+          response = stop
         end
       end
+    puts "**********************"
+    puts response
+    puts "**********************"
     return response
   end
   

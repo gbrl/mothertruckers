@@ -5,16 +5,14 @@ require './app/models/truck'
 
 module AppConfig
 
-  DATABASE_PATH = File.absolute_path("db/db.sqlite3", File.dirname(__FILE__))
-
-  # ActiveRecord::Base.logger = Logger.new(STDOUT)
-
   def self.establish_connection
-    puts "Connecting to database"
+    puts "Connecting to database..."
     ActiveRecord::Base.establish_connection(
-      adapter: 'sqlite3',
-      database: DATABASE_PATH,
-      # min_messages: 'error'
+      adapter:  "postgresql",
+      host:     "ec2-54-163-230-90.compute-1.amazonaws.com",
+      username: "ucmocwstzaxduv",
+      password: "wfx8En3oykmS2__gOkW7j_zLBG",
+      database: "d74a2i8lmqp2et"
     )
   end
 
