@@ -15,6 +15,9 @@
     <em><%= t.cuisine %></em>
     <br /><br />
     <p><%= t.description %></p>
+    <% if t.website.length > 1 %>
     <a target="_blank" href="<%= t.website %>" class="website-link">Website</a>
-    <br/ ><br/ >
+        <br/ ><br/ >
+
+    <% end %>
   </div>
