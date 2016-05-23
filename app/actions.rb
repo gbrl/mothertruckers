@@ -69,7 +69,7 @@ end
 
 post '/users/login' do
   @user = User.find_by_email(params[:email])
-  if @user && (@user.password == params[:password])
+  if @user && (@user.authenticate(params[:password]))
     session[:id] = @user.id
     redirect '/'
   else
