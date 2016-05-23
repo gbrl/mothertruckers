@@ -17,10 +17,8 @@ class Truck < ActiveRecord::Base
   def escaped_current_stop_lat_lng
     address = ''
     stop = self.open?
-    puts stop
     if stop
       address = "#{stop.latitude.to_s},#{stop.longitude.to_s}"
-      puts address
     end
     return address
   end
@@ -31,7 +29,7 @@ class Truck < ActiveRecord::Base
     trucks.each do |t|
       next if t.stops.count < 1
       t.stops.each do |stop|
-          if ((stop.from < DateTime.now.utc) && (stop.to > DateTime.now.utc))
+          if ((stop.from < Time.now.utc) && (stop.to > Time.now.utc))
             open_truck_ids << stop.truck_id
           end
       end
@@ -43,13 +41,16 @@ class Truck < ActiveRecord::Base
   def open?
     response = false
     stops = self.stops
+    puts stops.count
     stop_ids = []
-      stops.each do |stop|
-        if ((stop.from < DateTime.now.utc) && (stop.to > DateTime.now.utc))
-          response = true
-        end
+    current_time = DateTime.now - (4/24.0)
+    stops.each do |stop|
+      if ((stop.from < current_time) && (stop.to > current_time))
+        response = stop
       end
+    end
     return response
+    
   end
   
   private

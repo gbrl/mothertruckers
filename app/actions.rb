@@ -100,6 +100,11 @@ end
 get '/users/:id' do
 end
 
+post 'users' do
+    @user = User.create(email: params[:email], password: params[:password])
+    redirect '/'
+end
+
 
 # FAVOURITES
 

@@ -11,6 +11,7 @@ gem 'tux'
 gem 'pry'
 gem 'rspec'
 gem 'byebug'
+gem 'bcrypt'
 
 
 group :development, :test do

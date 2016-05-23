@@ -16,6 +16,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     backports (3.6.7)
+    bcrypt (3.1.10)
     bond (0.5.1)
     builder (3.2.2)
     byebug (8.2.4)
@@ -91,6 +92,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  bcrypt
   byebug
   pry
   puma

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523171309) do
+ActiveRecord::Schema.define(version: 20160523193823) do
 
   create_table "favourites", force: :cascade do |t|
     t.integer "truck_id"
@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20160523171309) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"
