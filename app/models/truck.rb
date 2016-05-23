@@ -36,7 +36,6 @@ class Truck < ActiveRecord::Base
           end
       end
     end
-
     @open_trucks = Truck.where(id: open_truck_ids)
   end
 
@@ -49,9 +48,6 @@ class Truck < ActiveRecord::Base
           response = stop
         end
       end
-    puts "**********************"
-    puts response
-    puts "**********************"
     return response
   end
   
