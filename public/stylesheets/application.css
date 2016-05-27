@@ -46,7 +46,7 @@ body {
               margin: 0;
               font-size: 90%;
               height: 25px !important;
-              background-image: url("http://localhost:3000/images/magnifying_glass.png");
+              background-image: url("/images/magnifying_glass.png");
               background-size: 15px;
               background-repeat: no-repeat;
               background-position: top 5px right 5px;

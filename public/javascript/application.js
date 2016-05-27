@@ -7,15 +7,12 @@ $(document).ready(function() {
         e.preventDefault();
         var search_query = $(this).val();
         search_query = search_query.replace("?","");
-        base_url = "http://localhost:3000/search?"
+        base_url = "/search?"
         search_url = base_url + search_query
         window.location = search_url;
       }
     });
 
-    // $('#searchbar').on('submit', function(e) {
-    //   e.preventDefault();
-    // });
 
     $('#searchbar input').on('keyup', _.debounce(filterTrucks, 110));
 
