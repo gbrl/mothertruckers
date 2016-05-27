@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Truckle | Food Truck Finder</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
     <link rel="stylesheet" href="/stylesheets/rateit.css">
     <link rel="stylesheet" href="/stylesheets/application.css">
   </head>
@@ -29,14 +29,14 @@
     <%= yield %>
   </section>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+  <script src="//cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
   <script src="/javascript/masonry.pkgd.min.js"></script>
   <script src="/javascript/imagesloaded.pkgd.min.js"></script>
   <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
   <script src="//cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
   <script src="/javascript/application.js"></script>
   <% if @truck && @truck.open? || @stops %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsYE4Eu-AtijP89UfASbAi3HMSCRkUKHE&callback=showMap" async defer></script>
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsYE4Eu-AtijP89UfASbAi3HMSCRkUKHE&callback=showMap" async defer></script>
   <% end %>
 
 

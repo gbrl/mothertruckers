@@ -13,6 +13,7 @@ gem 'rspec'
 gem 'byebug'
 gem 'pg'
 gem 'bcrypt'
+gem 'sass'
 
 
 group :development, :test do
