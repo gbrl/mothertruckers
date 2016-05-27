@@ -43,6 +43,11 @@ $(document).ready(function() {
       });
   });
 
+  // If the user isn't logged in, and they try to favourite, bring them to the login page.
+  $(".heart-dead-anchor").on("click", function(e){
+     window.location = "/login";
+  });
+
 
   $(".heart-live-anchor").on("click", function(e){
 

@@ -3,7 +3,7 @@
     <% if current_user %>
     <a href="" class="heart-live-anchor" userid="<%=current_user.id%>" truckid="<%=t.id%>">
     <% else %>
-    <a href="#" >
+    <a href="#" class="heart-dead-anchor">
     <% end %>
     <% if current_user && (current_user.favourite_truck_ids.include? t.id) %>
       <img src="/images/heart_red.png" height="25" width="25" class="hearted" />
