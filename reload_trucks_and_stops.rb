@@ -42,11 +42,11 @@ def parse(hash)
 
   trucks.each do |e| 
     puts "Adding truck..."
+
+    secure_img_url = e["main_image"].gsub!("http","https")
+    puts "New secure image url is: #{secure_img_url}"
+
     new_truck = Truck.new(
-
-      var secure_img_url = e["main_image"]
-      var secure_img_url = secure_img_url.gsub("http","https")
-
       name: e["name"],
       description: e["description_stripped"],
       email: e["email"],
@@ -55,6 +55,7 @@ def parse(hash)
       image: secure_img_url,
       image_small: e["main_image_thumbnail"],
       image_large: e["main_image_large"])
+
 
     if new_truck.save!
       if e["stop_details"] && e["stop_details"].length > 0
@@ -70,6 +71,7 @@ def parse(hash)
         end
       end
     end
+    puts "#{new_truck.name} was added."
   end
 end
 

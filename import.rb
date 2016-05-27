@@ -31,11 +31,11 @@ def parse(hash)
   trucks = hash['objects']
 
   trucks.each do |e| 
+
+    secure_img_url = e["main_image"].gsub!("http","https")
+    puts "New secure image url is: #{secure_img_url}"
+    
     new_truck = Truck.new(
-
-      var secure_img_url = e["main_image"]
-      var secure_img_url = secure_img_url.gsub("http","https")
-
       name: e["name"],
       description: e["description_stripped"],
       email: e["email"],
