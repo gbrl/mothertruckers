@@ -43,12 +43,16 @@ def parse(hash)
   trucks.each do |e| 
     puts "Adding truck..."
     new_truck = Truck.new(
+
+      var secure_img_url = e["main_image"]
+      var secure_img_url = secure_img_url.gsub("http","https")
+
       name: e["name"],
       description: e["description_stripped"],
       email: e["email"],
       website: e["site_url"],
       cuisine: e["cuisine"],
-      image: e["main_image"],
+      image: secure_img_url,
       image_small: e["main_image_thumbnail"],
       image_large: e["main_image_large"])
 
