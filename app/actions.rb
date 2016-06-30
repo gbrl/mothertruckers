@@ -1,4 +1,11 @@
-# HOME
+# FORCE HTTPS
+
+before do
+  if ENV['RACK_ENV'] == 'production'
+    redirect request.url.sub('http', 'https') unless request.secure?
+  end
+end
+
 helpers do
   def current_user
     if session[:id] and user = User.find(session[:id])
@@ -15,6 +22,7 @@ get '/profile' do
   erb :'users/show'
 end
 
+# HOME
 get '/' do
   @user = current_user if current_user
   @stops = Stop.open
@@ -22,7 +30,6 @@ get '/' do
 end
 
 # TRUCKS
-
 
 get '/trucks' do
   @trucks = Truck.all
